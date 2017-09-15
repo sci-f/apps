@@ -1,0 +1,36 @@
+---
+title: apps
+layout: none
+---
+
+{
+
+  "links": {
+    "self": "{{ site.url }}{{ page.url }}"
+  },
+
+  "data": [
+
+        {% for app in site.apps %}
+            {
+                "id": "{{ app.url | replace:'.html','.md'}}",
+                "author": "{{ app.author }}",
+                 {% if app.categories %}
+                    "categories": [
+                    {% for category in app.categories %}
+                        "{{ category }}"{% if forloop.last %}{% else %},{% endif %}
+                    {% endfor %}
+                 ],{% endif %}
+                 {% if app.files %}
+                    "files": [
+                    {% for file in app.files %}
+                        "{{ file }}"{% if forloop.last %}{% else %},{% endif %}
+                    {% endfor %}
+                 ],{% endif %}
+                "links": {
+                    "self": "{{ site.url }}{{ dataset.url }}"
+                }
+    }{% if forloop.last %}{% else %},{% endif %}
+{% endfor %}
+]
+}

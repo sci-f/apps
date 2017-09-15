@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="container mt">
+    <div class="row">
+
+        {% include appheader.html %}
+
+        <div style="margin-top:25px" class="col-md-6">
+
+            <h4>SingularityApp.{{ page.slug }}</h4>
+            <div class="spacing"></div>
+
+            {{ content }}
+
+        </div>
+        <div style="margin-top:25px" class="col-md-2"></div>
+
+        <div class="col-md-4">
+            <div class="spacing"></div>
+            <div style="padding-bottom:20px" class="hline"></div>
+            <p><b>Date: </b> {{ page.date | date: "%b %-d, %Y" }}</p>
+            <p><b>Author: </b> {{ page.author }}</p>
+            {% if page.categories %}
+            <p><b>Categories:</b>{% for cat in page.categories %}
+                    {{ cat }}{% unless forloop.last %},{% endunless %}{% endfor %}</p>
+            {% endif %}
+            {% if page.tags %}
+            <p><b>Tags: </b>{% for tag in page.tags %}{{ tag }} {% unless forloop.last %},{% endunless %}{% endfor %}</p>
+            {% endif %}
+            {% if page.files %}
+            <p><b>Files: </b>{% for file in page.files %}<a href="../{{ file }}"> {{ file }}<br></a>{% unless forloop.last %},{% endunless %}{% endfor %}</p>
+            {% endif %}
+        </div>
+    </div><! --/row -->
+</div><! --/container -->
+	 
+{% include portfolio.html limit=5 %}

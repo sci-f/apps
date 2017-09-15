@@ -1,0 +1,68 @@
+### GENERAL SETTINGS ###
+
+# Site settings
+title: CONTAINERS-FTW
+description: "Standard Container Integration Format (SCI-F) Singularity Containers"
+baseurl: "/apps" #important: start with /
+url: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: false
+ syntax_highlighter: rouge
+
+
+permalink: /:categories/:title
+excerpt_separator: <!--more--> #use this in posts to define how long the excerpt of the post (that is shown on the Blog page) is
+
+colors:  #in hex code if not noted else
+  primary: "#159958"
+  primary_rgb: "21,153,88" #rgb of the primary. Needed in some places for the transparency effect.
+  secondary: "#F7F7F7"
+  link: "#159958"
+  link_hover: "#01b2fe"
+  footer_heading: "#777"
+  footer_content: "#bfc9d3"
+
+# Making projects separate from posts
+collections:
+  api:
+    output: true
+    permalink: /api/:path/   # Important, don't edit files in api folder
+  apps:                      # is symbolic link to _apps
+    output: true
+    permalink: /scif/:path/
+  examples:
+    output: true
+    permalink: /examples/:title/
+
+url: "https://containers-ftw.github.io"
+repo: "https://www.github.com/containers-ftw/containers-ftw.github.io"
+
+
+defaults:
+  -
+    scope:
+      path: "_apps"
+    values:
+      layout: app
+  -
+   scope:
+     path: "_api"
+   values:
+     layout: api
+
+
+### CONTACT SETTINGS ###
+
+# Social networks usernames. Many more available: google-plus, flickr, linkedin, etc). Shown in footer.
+social:
+  - title: twitter
+    url: https://www.twitter.com/researchapps
+
+# Short text about your company. Shown in footer on every page and also separately on Home and Contact page.
+about: "Singularity Apps are modular SCI-F apps that can be added as helpers or wrappers for Singularity containers"
