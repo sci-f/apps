@@ -1,0 +1,13 @@
+<div id="asciinema-{{ page.title | replace:' ','-' }}">
+    <asciinema-player 
+        src="assets/asciicast/{{ page.asciicast }}" 
+        poster="data:text/plain,{{page.title}}" 
+        title="{{page.title}}" 
+        author="{{page.author}}" 
+        cols="{{site.asciicast.cols}}"
+        rows="{{site.asciicast.rows}}" 
+        speed="{{site.asciicast.speed}}" 
+        theme="{{site.asciicast.theme}}">
+    </asciinema-player>
+</div>
+

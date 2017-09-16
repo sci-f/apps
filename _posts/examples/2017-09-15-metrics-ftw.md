@@ -4,6 +4,7 @@ title:  "Container Metrics: Evaluating a container from Different Angles via SCI
 author: Vanessasaurus
 date:   2017-09-13 16:16:01 -0600
 github: https://github.com/containers-ftw/metrics-ftw
+asciinema: container-metrics-ftw.json
 categories:
  - Examples
  - Metrics
@@ -13,14 +14,14 @@ For this next use case, a scientist is interested in running a series of metrics
 
 Each installed SCI-F app can be thought of as a particular context to evoke the container's main runscript, and the apps themselves are relatively agnostic to the runscript itself. Importantly, using the image for its intended purpose is not impacted by the presence of these supporting tools. The command to run the image is unchanged. When the scientist runs the image, he sees it perform it’s primary function, a print of “Hello World!” to the console.
 
-```
+```bash
 singularity run metrics.img 
 Hello-World!
 ```
 
 At this point, the scientist doesn’t know what the metrics are, or the particular environment or locations in the container. Given that the container has SCI-F, the scientist can ask the container to tell him what metrics are installed:
 
-```
+```bash
  singularity apps metrics.img 
 custom
 linter
@@ -31,13 +32,13 @@ time
 
 And then run the metric easily by simply specifying it’s name:
 
-```
+```bash
 singularity run --app time metrics.img
 ```
 
 or even writing the previous command into a loop:
 
-```
+```bash
 for app in $(singularity apps metrics.img)
    do
       singularity run --app $app metrics.img
@@ -64,7 +65,7 @@ In the above example, since the main run command for the container looks for the
 SINGULARITY_APPNAME, we need to unset it first. We then run strace and return
 a table that assesses the runscript:
 
-```
+```bash
  singularity run --app strace metrics.img 
 Hello-World!
 % time     seconds  usecs/call     calls    errors syscall
@@ -127,7 +128,7 @@ Although this particular example is comical, the larger idea that individuals ca
 A SCI-F app can meet the needs to serve as a linter over a set of files,
 or general tests. The example is provided here with the SCI-F app “linter,” which runs a linter over a script. 
 
-```
+```bash
 singularity run --app linter metrics.img 
 
 In /scif/apps/linter/lintme.sh line 2:
@@ -149,8 +150,7 @@ This example used a file provided in the container, but a linter app could also 
 ### Metrics Example 4: Runtime Evaluation
 In that a metric can call a runscript, it could be easy to evaluate running the main analysis under various levels or conditions. As a simple proof of concept, here we are creating an app to execute the same exact script in parallel.
 
-```
-```
+```bash
 %apprun parallel
     COMMAND="/.singularity.d/actions/run; "
     (printf "%0.s$COMMAND" {1..4}) | parallel
@@ -160,9 +160,8 @@ Hello World!
 Hello World!
 Hello World!
 ```
-```
 
 And you might imagine a similar loop to run an analysis, and modify a runtime
 or system variable for each loop, and save the output (or print to console). 
 
-This metrics implementation is available for use and documentation provided in entirety [on Github](https://github.com/containers-ftw/metrics-ftw).
+This metrics implementation is available for use and documentation provided in entirety [on Github](https://github.com/containers-ftw/metrics-ftw). If you want to watch the asciicast in its home and original form, you can [see it here](https://asciinema.org/a/137434?speed=3).

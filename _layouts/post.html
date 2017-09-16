@@ -12,17 +12,31 @@ layout: default
             <a href="{{ page.url | prepend: site.baseurl }}"><h3 class="ctitle">{{ page.title }}</h3></a>
             <p><csmall style="color:#428bca">{{ page.date | date: "%b %-d, %Y" }}. | By: {{ page.author }}</csmall>
             </p>
-              
+
+            {% if page.asciinema %}
+            {% include asciicast.html %}              
+            {% endif %}
+
             {{ content }}
 
             <div class="spacing"></div>
             <p class="share">
 
-             <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter }}&related={{ site.twitter }}" rel="nofollow" target="_blank" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
-    <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}" rel="nofollow" target="_blank" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
-    <a href="http://www.reddit.com/submit?url={{ site.url }}{{ page.url }}&title={{ page.title }}" rel="nofollow" target="_blank" title="Share on Reddit"><i class="fa fa-reddit"></i></a>
-
-            </p> -->
+             <a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.twitter }}&related={{ site.twitter }}" 
+                rel="nofollow" 
+                target="_blank" 
+                title="Share on Twitter"
+                style="margin-left:10px"><i class="fa fa-twitter"></i></a>
+              <a href="https://facebook.com/sharer.php?u={{ site.url }}{{ page.url }}"
+                 rel="nofollow"
+                 target="_blank" 
+                 title="Share on Facebook"
+                 style="margin-left:10px"><i class="fa fa-facebook"></i></a>
+              <a href="http://www.reddit.com/submit?url={{ site.url }}{{ page.url }}&title={{ page.title }}" 
+                 rel="nofollow" 
+                 target="_blank" 
+                 title="Share on Reddit"><i class="fa fa-reddit"></i>Reddit</a>
+            </p>
         </div><! --/col-lg-8 -->
         
         {% include sidebar.html %}
