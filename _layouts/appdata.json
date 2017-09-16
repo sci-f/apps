@@ -1,14 +1,12 @@
 ---
-title: app
+title: appdata
 layout: none
 ---
 
 {
 
   "links": {
-    "previos": "{{ site.url }}{{ page.previous }}",
-    "self": "{{ site.url }}{{ page.url }}",
-    "next": "{{ site.url }}{{ page.next }}"
+    "self": "{{ site.url }}{{ page.path }}"
   },
 
   "data": [
@@ -16,10 +14,10 @@ layout: none
             {
                 "id": "{{ page.url | replace:'.html','.md'}}",
                 "author": "{{ page.author }}",
-                 {% if page.categories %}
-                    "categories": [
-                    {% for category in page.categories %}
-                        "{{ category }}"{% if forloop.last %}{% else %},{% endif %}
+                 {% if page.tags %}
+                    "tags": [
+                    {% for tag in page.tags %}
+                        "{{ tag }}"{% if forloop.last %}{% else %},{% endif %}
                     {% endfor %}
                  ],{% endif %}
                  {% if page.files %}
@@ -29,7 +27,7 @@ layout: none
                     {% endfor %}
                  ],{% endif %}
                 "links": {
-                    "self": "{{ site.url }}{{ dataset.url }}"
+                    "self": "{{ site.url }}{{ page.path }}"
                 }
     }{
 ]

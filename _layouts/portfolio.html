@@ -8,6 +8,7 @@ layout: default
         {% if include.title %}<h3>{{ include.title }}</h3>{% endif %}
         <div class="recentitems portfolio">
             {% for app in site.apps limit:include.limit %}
+                {% if app.date %}
                 <div class="portfolio-item graphic-design">
                     <div class="he-wrap tpl6">
                     <img style="max-height:200px; padding-top:30px; padding-bottom:30px" src="{{ "/assets/img/app/" | prepend: site.baseurl }}{{ app.img }}" alt="">
@@ -19,6 +20,7 @@ layout: default
                         </div><!-- he view -->
                     </div><!-- he wrap -->
                 </div><!-- end col-12 -->
+                {% endif %}
             {% endfor %}
         </div><!-- portfolio -->
     </div><!-- portfolio container -->

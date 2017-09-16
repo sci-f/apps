@@ -29,10 +29,7 @@ colors:  #in hex code if not noted else
 
 # Making projects separate from posts
 collections:
-  api:
-    output: true
-    permalink: /api/:path/   # Important, don't edit files in api folder
-  apps:                      # is symbolic link to _apps
+  apps:
     output: true
     permalink: /scif/:path/
 
@@ -46,11 +43,6 @@ defaults:
       path: "_apps"
     values:
       layout: app
-  -
-   scope:
-     path: "_api"
-   values:
-     layout: api
 
   -
     scope:
