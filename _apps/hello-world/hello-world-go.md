@@ -2,14 +2,13 @@
 title:  "Hello World (Go)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-categories:
-- app
-- go
 img: robots/robot5.png
 thumb: robots/robot5.png
 tags: 
 - scif
 - singularity
+- app
+- go
 files:
  - hello-world.go
  - SingularityApp.go

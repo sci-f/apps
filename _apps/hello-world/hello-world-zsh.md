@@ -2,13 +2,12 @@
 title:  "Hello World (Zsh)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-categories:
-- app
-- zsh
-- shell
 img: robots/robot12.png
 thumb: robots/robot12.png
 tags: 
+- app
+- zsh
+- shell
 - scif
 - singularity
 files:

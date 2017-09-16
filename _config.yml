@@ -15,7 +15,6 @@ kramdown:
  hard_wrap: false
  syntax_highlighter: rouge
 
-
 permalink: /:categories/:title
 excerpt_separator: <!--more--> #use this in posts to define how long the excerpt of the post (that is shown on the Blog page) is
 
@@ -36,9 +35,6 @@ collections:
   apps:                      # is symbolic link to _apps
     output: true
     permalink: /scif/:path/
-  examples:
-    output: true
-    permalink: /examples/:title/
 
 url: "https://containers-ftw.github.io"
 repo: "https://www.github.com/containers-ftw/containers-ftw.github.io"
@@ -71,6 +67,9 @@ social:
   - title: twitter
     url: https://www.twitter.com/researchapps
 
+twitter: researchapps
+
+
 # Short text about your company. Shown in footer on every page and also separately on Home and Contact page.
 about: "Singularity Apps are modular SCI-F apps that can be added as helpers or wrappers for Singularity containers"
 
@@ -87,3 +86,4 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - _templates
+  - README.md

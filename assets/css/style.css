@@ -19,8 +19,18 @@ body {
     }
 
 h1, h2, h3, h4, h5, h6 {
+    color: #428bca;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
+}
+
+ul.list {
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+ul > li {
+  color: #333;
 }
 
 .lobster-font {
@@ -35,7 +45,7 @@ p {
     font-weight: 400;
     font-size: 14px; 
     line-height: 24px;
-    color: #159958; 
+    color: #333; 
     margin-top: 10px; 
 }
 
@@ -374,6 +384,7 @@ a:focus {
     padding-top: 25px;
     padding-bottom: 25px;
 }
+
 
 #blue h3 {
     color: white;

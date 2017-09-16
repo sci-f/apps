@@ -2,14 +2,13 @@
 title:  "Hello World (perl)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-categories:
-- app
-- perl
 img: robots/robot7.png
 thumb: robots/robot7.png
 tags: 
 - scif
 - singularity
+- app
+- perl
 files:
  - hello-world.pl
  - SingularityApp.pl

@@ -12,10 +12,11 @@
     </div>
     <div class="navbar-collapse collapse navbar-right">
       <ul class="nav navbar-nav">
-        <li {% if page.title == "Home" %}class="active"{% endif %}><a href="{{"/" | prepend: site.baseurl }}">HOME</a></li>
+        <li {% if page.title == "Blog" %}class="active"{% endif %}><a href="{{"/blog/" | prepend: site.baseurl }}">BLOG</a></li>
         <li {% if page.title == "About" %}class="active"{% endif %}><a href="{{"/about/" | prepend: site.baseurl }}">ABOUT</a></li>
         <li {% if page.title == "Contact" %}class="active"{% endif %}><a href="https://www.github.com/containers-ftw/containersftw.github.io/issues" target="_blank">HELP</a></li>
-      </ul>
+         <li><a href="{{ site.github }}" target="_blank"><i class="fa fa-2x fa-github"></i></a></li>
+     </ul>
 
     <form class="navbar-form navbar-right" role="search" action="search.html">
     <span class="tipue_search_left"></span>
@@ -29,6 +30,7 @@
                title="At least 3 characters" required>
     </span>
    </form>
+
     </div><!--/.nav-collapse -->
   </div>
 </div>

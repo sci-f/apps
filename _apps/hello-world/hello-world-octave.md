@@ -2,12 +2,11 @@
 title:  "Hello World (octave)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-categories:
-- app
-- octave
 img: robots/robot6.png
 thumb: robots/robot6.png
 tags: 
+- app
+- octave
 - scif
 - singularity
 files:

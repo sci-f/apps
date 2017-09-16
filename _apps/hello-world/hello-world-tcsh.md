@@ -2,13 +2,12 @@
 title:  "Hello World (tcsh)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-categories:
-- app
-- tsch
-- shell
 img: robots/robot11.png
 thumb: robots/robot11.png
 tags: 
+- app
+- tsch
+- shell
 - scif
 - singularity
 files:

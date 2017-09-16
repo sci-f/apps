@@ -2,12 +2,11 @@
 title:  "Hello World (python)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-categories:
-- app
-- python
 img: robots/robot8.png
 thumb: robots/robot8.png
 tags: 
+- app
+- python
 - scif
 - singularity
 files:

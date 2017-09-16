@@ -2,13 +2,12 @@
 title:  "Hello World (bash)"
 date:   2017-08-29 16:54:46
 author: Vanessa Sochat
-categories:
-- app
-- bash
-- shell
 img: robots/robot2.png
 thumb: robots/robot2.png
 tags: 
+- app
+- bash
+- shell
 - scif
 - singularity
 files:

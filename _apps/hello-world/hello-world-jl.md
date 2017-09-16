@@ -2,12 +2,11 @@
 title:  "Hello World (Julia)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-categories:
-- app
-- julia
 img: robots/robot6.png
 thumb: robots/robot6.png
 tags: 
+- app
+- julia
 - scif
 - singularity
 files:
