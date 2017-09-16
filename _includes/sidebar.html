@@ -1,15 +1,10 @@
 <div class="col-lg-4">
-   <!--  <h4>Search</h4>
+
     <div class="hline"></div>
         <p>
-            <br/>
-            <input type="text" class="form-control" placeholder="Search something">
-        </p>
-    <div class="spacing"></div> -->
-    <h4>Subscribe</h4>
-    <div class="hline"></div>
-        <p>
-            <p class="rss-subscribe">Subscribe to this blog <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>.</p>
+            <i class="fa fa-2x fa-rss" style="color:orange"></i><a href="{{ "/feed.xml" | prepend: site.baseurl }}"></a>
+                {% if page.github %}<a style="padding-left:10px" href="{{ page.github }}" target="_blank">
+                <i class="fa fa-2x fa-github" style="color:black"></i></a>{% endif %}
         </p>
     <div class="spacing"></div>
     <h4>Categories</h4>

@@ -2,6 +2,7 @@
 layout: post
 title:  "Hello World, Using SCI-F for Modular Software Evaluation"
 date:   2017-09-13 16:16:01 -0600
+author: Vanessasaurus
 github: https://github.com/containers-ftw/hello-world-ftw
 categories:
  - Examples
