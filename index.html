@@ -5,10 +5,10 @@ permalink: /
 ---
 
 <div class="row">
-    <div class="col-md-3">
-        <p><a class="btn btn-lg btn-theme" href="/apps/api/index.json" role="button">JSON</a></p>
-   </div>
+    <div class="col-md-12" style="margin-left:10px; margin-right:10px;">
+        <a class="btn btn-theme" href="/apps/api/index.json" role="button">JSON</a>
 </div>
+
 <div class="row">
   {% assign loopcount = 1 %}
   {% for post in site.posts %}
@@ -37,3 +37,4 @@ permalink: /
 
   {% endfor %}
 </div>
+

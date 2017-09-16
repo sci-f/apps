@@ -5,6 +5,10 @@
 <script src="{{ "/assets/js/jquery.hoverex.min.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/assets/js/jquery.prettyPhoto.js" | prepend: site.baseurl }}"></script>
 <script src="{{ "/assets/js/jquery.isotope.min.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/assets/js/toastr.min.js" | prepend: site.baseurl }}"></script>
+<script src="{{ "/assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
+<script src="{{ "/assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
+<script src="{{ "/assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
 <script src="{{ "/assets/js/custom.js" | prepend: site.baseurl }}"></script>
 <script>
 // Portfolio
@@ -87,4 +91,9 @@
 		setPortfolio();          
 	});
 })(jQuery);
+</script>
+<script>
+$(document).ready(function() {
+  $('#tipue_search_input').tipuesearch();
+});
 </script>

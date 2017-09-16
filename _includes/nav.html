@@ -16,6 +16,19 @@
         <li {% if page.title == "About" %}class="active"{% endif %}><a href="{{"/about/" | prepend: site.baseurl }}">ABOUT</a></li>
         <li {% if page.title == "Contact" %}class="active"{% endif %}><a href="https://www.github.com/containers-ftw/containersftw.github.io/issues" target="_blank">HELP</a></li>
       </ul>
+
+    <form class="navbar-form navbar-right" role="search" action="search.html">
+    <span class="tipue_search_left"></span>
+    <span class="tipue_search_right">
+        <input type="text" 
+               name="q" 
+               id="tipue_search_input" 
+               pattern=".{3,}" 
+               class="form-control" 
+               placeholder="Search" 
+               title="At least 3 characters" required>
+    </span>
+   </form>
     </div><!--/.nav-collapse -->
   </div>
 </div>

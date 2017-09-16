@@ -1,0 +1,16 @@
+%apprun appname
+    exec $SINGULARITY_APPROOT/app-file.sh
+%appfiles appname
+    app-file.sh
+%apphelp
+    This text will be printed to the screen when the user asks for the
+    apps help!
+    singularity help --app appname <container>
+%appinstall
+    apt-get update && apt-get install -y lolcat
+%applabels
+    MAINTAINER Vanessasaur
+    PANCAKES tasty
+%appenv
+    FOO=BAR
+    export FOO

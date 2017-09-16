@@ -1,0 +1,9 @@
+%apprun octave
+    exec octave --no-gui --silent $SINGULARITY_APPROOT/hello-world.octave
+%appenv octave
+    DISPLAY=localhost:0.0
+    export DISPLAY
+%appfiles octave
+    hello-world.octave
+%appinstall octave
+    apt-get install -y octave

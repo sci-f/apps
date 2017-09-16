@@ -12,13 +12,22 @@ layout: default
             <h4>SingularityApp.{{ page.slug }}</h4>
             <div class="spacing"></div>
 
+            <div id="recipe">
             {{ content }}
+            </div>
 
         </div>
         <div style="margin-top:25px" class="col-md-2"></div>
-
         <div class="col-md-4">
             <div class="spacing"></div>
+
+            <!-- Copy to clipboard -->
+            <div class="row">
+                <div class="col-md-2">
+                    <button style="margin-top:55px" id="recipe" class="btn copyme" data-clipboard-target="#recipe"><i class="fa fa-copy"></i></button>
+	        </div>
+            </div>
+
             <div style="padding-bottom:20px" class="hline"></div>
             <p><b>Date: </b> {{ page.date | date: "%b %-d, %Y" }}</p>
             <p><b>Author: </b> {{ page.author }}</p>
@@ -30,10 +39,33 @@ layout: default
             <p><b>Tags: </b>{% for tag in page.tags %}{{ tag }} {% unless forloop.last %},{% endunless %}{% endfor %}</p>
             {% endif %}
             {% if page.files %}
-            <p><b>Files: </b>{% for file in page.files %}<a href="../{{ file }}"> {{ file }}<br></a>{% unless forloop.last %},{% endunless %}{% endfor %}</p>
+            <p><b>Files: </b>{% for file in page.files %}<a href="{{ file }}"> {{ file }}<br></a>{% unless forloop.last %},{% endunless %}{% endfor %}</p>
             {% endif %}
         </div>
     </div><! --/row -->
 </div><! --/container -->
 	 
 {% include portfolio.html limit=5 %}
+{% include notification.html %}
+<script>
+$('.copyme').click(function(){
+    var copy_id = $(this).attr('id')
+    var content = $("code")
+    var range = document.createRange();  
+    range.selectNode(content[0])  
+    window.getSelection().addRange(range)
+
+  try {  
+        // Now that we've selected the anchor text, execute the copy command  
+        var successful = document.execCommand('copy');  
+        var msg = successful ? 'successful' : 'unsuccessful';  
+        toast_message('Copy ' + msg)
+      }  catch(err) {  
+        toast_message('Oops, unable to copy');  
+      }  
+
+    // removeRange(range) when it is supported  
+    window.getSelection().removeAllRanges();  
+
+});
+</script>

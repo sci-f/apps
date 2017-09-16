@@ -12,6 +12,7 @@ tags:
 - singularity
 files:
  - hello-world.awk
+ - SingularityApp.awk
 ---
 
 ```yaml

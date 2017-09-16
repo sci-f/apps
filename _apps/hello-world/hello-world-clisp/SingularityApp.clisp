@@ -1,0 +1,6 @@
+%apprun clisp
+    exec clisp $SINGULARITY_APPROOT/hello-world.clisp
+%appfiles clisp
+    hello-world.clisp
+%appinstall clisp
+    apt-get install -y clisp

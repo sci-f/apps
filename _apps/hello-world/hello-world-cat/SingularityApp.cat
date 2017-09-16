@@ -1,0 +1,4 @@
+%apprun cat
+    exec cat $SINGULARITY_APPROOT/hello-world.cat
+%appfiles cat
+    hello-world.cat

@@ -42,7 +42,7 @@ collections:
 
 url: "https://containers-ftw.github.io"
 repo: "https://www.github.com/containers-ftw/containers-ftw.github.io"
-
+future: true
 
 defaults:
   -
@@ -56,6 +56,13 @@ defaults:
    values:
      layout: api
 
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+    future: true
 
 ### CONTACT SETTINGS ###
 
@@ -66,3 +73,17 @@ social:
 
 # Short text about your company. Shown in footer on every page and also separately on Home and Contact page.
 about: "Singularity Apps are modular SCI-F apps that can be added as helpers or wrappers for Singularity containers"
+
+
+# Search settings
+tipue_search:
+  include:
+    pages: false
+    collections: [apps]
+  exclude:
+    files: [index.md, search.html]
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - _templates
