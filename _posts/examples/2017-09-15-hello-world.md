@@ -12,6 +12,8 @@ categories:
 
 A common question pertains to evaluation of different solutions toward a common goal. An individual might ask “How does implementation “A” compare to implementation “B” as evaluated by one or more metrics?” For a systems admin, the metric might pertain to running times, resource usage, or efficiency. For a researcher, he or she might be interested in looking at variability (or consistency) of outputs. Importantly, it should be possible to give a container serving such a purpose to a third party that does not know locations of executables, or environment variables to load, and the container runs equivalently. SCI-F allows for this by way of providing modular software applications, each corresponding to a custom environment, libraries, and potentially files.
 
+<!--more--> 
+
 ## Method
 To demonstrate this use case, we developed a container that implements the most basic function for a program, a print to the console, for each of 19 different languages (R, awk, bash, c, cat, chapel, clisp, cpp, csh, go, julia, octave, perl, python, ruby, rust, tcsh, zsh). The container is designed as a means to collect a series of metrics relative to timing and system resources for each language. The metrics pertain to system resources provided by the time (time(1) - Linux manual page ) and strace (strace(1): trace system calls/signals...) utilities. A user that did not create the container could ask it for global help:
 

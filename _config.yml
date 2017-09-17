@@ -52,6 +52,13 @@ defaults:
       layout: "post"
     future: true
 
+    scope:
+      path: "pages"
+      type: "pages"
+    values:
+      layout: "base"
+
+
 ### CONTACT SETTINGS ###
 
 # Social networks usernames. Many more available: google-plus, flickr, linkedin, etc). Shown in footer.

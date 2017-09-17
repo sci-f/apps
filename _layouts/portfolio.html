@@ -1,6 +1,7 @@
 ---
-layout: default
+layout: base
 ---
+
 {{ content }}
 
 <div id="portfoliowrap">
@@ -11,7 +12,7 @@ layout: default
                 {% if app.date %}
                 <div class="portfolio-item graphic-design">
                     <div class="he-wrap tpl6">
-                    <img style="max-height:200px; padding-top:30px; padding-bottom:30px" src="{{ "/assets/img/app/" | prepend: site.baseurl }}{{ app.img }}" alt="">
+                    <img style="max-height:180px; padding-top:20px; padding-bottom:20px;" src="{{ "/assets/img/app/" | prepend: site.baseurl }}{{ app.img }}" alt="">
                         <div class="he-view">
                             <div class="bg a0" data-animate="fadeIn">
                                 <h3 class="a1" style='color:white' data-animate="fadeInDown">{{ app.title }}</h3>

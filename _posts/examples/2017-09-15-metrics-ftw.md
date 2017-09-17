@@ -12,6 +12,8 @@ categories:
 
 For this next use case, a scientist is interested in running a series of metrics over an analysis of interest (the container’s main function, executed by it’s primary runscript).  He has been given a container with a runscript, and several installed supporting metrics (SCI-F apps also in the container), and knows nothing beyond that. 
 
+<!--more-->
+
 Each installed SCI-F app can be thought of as a particular context to evoke the container's main runscript, and the apps themselves are relatively agnostic to the runscript itself. Importantly, using the image for its intended purpose is not impacted by the presence of these supporting tools. The command to run the image is unchanged. When the scientist runs the image, he sees it perform it’s primary function, a print of “Hello World!” to the console.
 
 ```bash

@@ -1,8 +1,3 @@
----
-layout: default
-title: Tag
----
-
 {% assign rawtags = "" %}
 {% for app in site.apps %}
     {% assign ttags = app.tags | join:'|' | append:'|' %}

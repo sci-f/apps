@@ -14,14 +14,18 @@ body {
     margin: 0; 
     height: 100%; 
     color: #F7F7F7;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    /*font-family: 'Lato', sans-serif;*/
     font-weight: 400;
+    font-size: 1.75rem;
+ 
     }
 
 h1, h2, h3, h4, h5, h6 {
     color: #428bca;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
+    margin-top:50px;
 }
 
 ul.list {
@@ -41,10 +45,8 @@ ul > li {
 p { 
     padding: 0; 
     margin-bottom: 12px; 
-    font-family: 'Lato', sans-serif;
     font-weight: 400;
-    font-size: 14px; 
-    line-height: 24px;
+    line-height: 26px;
     color: #333; 
     margin-top: 10px; 
 }
@@ -237,22 +239,10 @@ a:focus {
     margin: 0 auto;
 }
 
-/* Services Wrap */
-#service {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
-#service i {
-    color: #159958;
-    font-size: 60px;
-    padding: 15px;
-}
-
 /* Portfolio Wrap */
 #portfoliowrap {
-    padding-top: 60px;
-    margin-bottom: 60px;
+    padding-top: 30px;
+    margin-bottom: 30px;
     display: block;
     text-align: center
 }
@@ -498,4 +488,10 @@ a.anchor{
     position: relative; 
     top: -80px; 
     visibility: hidden;
+}
+
+pre {
+    margin-top:30px;
+    margin-bottom:30px;
+    padding:20px
 }
