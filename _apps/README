@@ -1,0 +1,16 @@
+# Container with SCIF Apps
+
+1. First make sure you have installed Singularity 
+   (http://singularity.lbl.gov/install-linux)
+
+2. To generate a SCI-F app, you can start with a recipe (Singularity) and 
+   use it to bootstrap a new container image:
+
+      singularity create --size 2000 container.img
+      sudo singularity bootstrap container.img Singularity
+
+3. If you downloaded the zip from containers-ftw, you should be able to unzip
+   it, create the container, and run the command above.
+
+   unzip SingularityRecipe.scif.zip
+   <build container>

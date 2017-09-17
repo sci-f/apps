@@ -112,16 +112,6 @@ $(function() {
             download('Singularity', text)
     });
 
-    function downloadv1(filename, text) {
-        var element = document.createElement('a');
-        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-        element.setAttribute('download', filename);
-        element.style.display = 'none';
-        document.body.appendChild(element);
-        element.click();
-        document.body.removeChild(element);
-    }
-
     function download(recipe, text){
         resetMessage();
         zip.file("Singularity", text);
@@ -176,6 +166,7 @@ $(function() {
                add_text(editor,text);
 
                // Add files to zip
+               zip.file("README.md", urlToPromise("/apps/scif/README"), {binary:true});
                if (Object.prototype.hasOwnProperty.call(content, 'files')) {
                    var files = content.files
                    $.each( files, function( idx, file ) {
