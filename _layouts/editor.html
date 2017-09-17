@@ -2,11 +2,10 @@
 <html>
 
     {% include head.html %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
- 
-    <!-- Include Editor style. -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.6/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.6/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Theme included stylesheets -->
+    <link href="//cdn.quilljs.com/1.3.2/quill.snow.css" rel="stylesheet">
+    <link href="//cdn.quilljs.com/1.3.2/quill.bubble.css" rel="stylesheet"> 
     <body>
         {% include wrap.html %}
         {% include nav.html %}
@@ -23,95 +22,92 @@
         <script src="{{ "/assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
         <script src="{{ "/assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
         <script src="{{ "/assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+        <script src="//cdn.quilljs.com/1.3.2/quill.js"></script>
+        <script src="//cdn.quilljs.com/1.3.2/quill.min.js"></script>
  
-        <!-- Include Editor JS files. -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.6/js/froala_editor.pkgd.min.js"></script>
-
         {{ content }}
  
         {% include footer.html %}
-        <!-- Initialize the editor. -->
-        <script> 
+
+<script> 
+var editor;
+
 $(function() {
 
-// Download function
-function download(filename, text) {
-    var element = document.createElement('a');
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
-    element.setAttribute('download', filename);
-    element.style.display = 'none';
-    document.body.appendChild(element);
-    element.click();
-    document.body.removeChild(element);
-}
+    String.prototype.replaceAll = function(search, replacement) {
+        var target = this;
+        return target.split(search).join(replacement);
+    };
 
-String.prototype.replaceAll = function(search, replacement) {
-    var target = this;
-    return target.split(search).join(replacement);
-};
+    function html2text( html ) {
+        var d = document.createElement( 'div' );
+        console.log(html)
+        html = html.replaceAll('<p></p>','<br>')
+        console.log(html)
+        d.innerHTML = html;
+        return d.textContent;
+    }
 
-function html2text( html ) {
-    var d = document.createElement( 'div' );
-    console.log(html)
-    html = html.replaceAll('<p></p>','<br>')
-    console.log(html)
-    d.innerHTML = html;
-    return d.textContent;
-}
 
-    $.FroalaEditor.DefineIcon('saveSelection', {NAME: 'download'});
-    $.FroalaEditor.RegisterCommand('saveSelection', {
-      title: 'Download',
-      focus: true,
-      undo: false,
-      refreshAfterCallback: false,
-      callback: function () {
-        var text = this.html.get().replace('<p>','') // First line
-        var text = text.replaceAll('<p></p>','\n').replaceAll('<p>','\n').replaceAll('<\p>','\n').replaceAll('<br>','\n')
-        var text = text.replace(/(<([^>]+)>)/g, "");
-        download('Singularity', text)
-        this.selection.save();
-      }
+    // Initialize Editor
+    var options = {
+        debug: 'info',
+        modules: {
+            toolbar: "#toolbar",
+        },
+        placeholder: "You can select apps from the site to automatically generate your recipe here.",
+        readOnly: false,
+        theme: 'snow'
+    };
+
+
+    // Download Recipe
+    function download(filename, text) {
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    }
+
+    var customButton = document.querySelector('#download');
+        customButton.addEventListener('click', function() {
+            var text = $('.ql-editor').html().replace('<p>','') // First line
+            var text = text.replaceAll('<p></p>','\n').replaceAll('<p>','\n').replaceAll('<\p>','\n').replaceAll('<br>','\n')
+            var text = text.replace(/(<([^>]+)>)/g, "");
+            download('Singularity', text)
     });
- 
-    $('div#froala-editor')
-   
-    .on('froalaEditor.contentChanged', function (e, editor) {
-      $('#preview').html(editor.html.get());
+
+    $('#btn-clear').click(function(){
+        $('.ql-editor').html("")
     })
-    
-    .on('froalaEditor.initialized', function (e, editor) {
 
+    editor = new Quill('#textarea', options);
+   
+    // Add recipe text
+   function add_text(editor,content) {
+       var length = editor.getLength() + 1;
+       editor.insertText(length,content)
+   } 
 
-        // Load Recipes
-        if (localStorage.getItem("scif-recipes") === null) {  
+    // Load Recipes
+    if (localStorage.getItem("scif-recipes") === null) {  
 
-         editor.html.insert("# You don't have any app recipes saved!\n");
-         editor.html.insert("# Try <a href='/apps/tag/'> browsing </a> for some.");
+         add_text(editor,"# You don't have any app recipes saved!\n");
+         add_text(editor,"# Try <a href='/apps/tag/'> browsing </a> for some.");
 
+ 
         } else {
            recipes = JSON.parse(localStorage.getItem('scif-recipes'));
            $.each( recipes, function( name, content ) {
-               text = content.text.replace(/(?:\r\n|\r|\n)/g, '<br />').replace('<br />','').trim();
-               editor.html.insert("# " + name + "<br />");
-               editor.html.insert(text);
-
+               text = content.text.replace(/(?:\r\n|\r|\n)/g, '\n').replace('<br />','\n').trim();
+               add_text(editor,"# " + name + "\n");
+               add_text(editor,text);
            });
         }
         
-        // Save into undo stack the changes.
-        editor.undo.saveStep();
- 
-    })
-    .froalaEditor({
-      toolbarButtons: [  'saveSelection', 'restoreSelection', 'clearSelection', 'bold', 'italic', 'underline', 'insertImage', 'insertLink', 'emoticons', 'undo', 'redo' ]
-
-//      toolbarButtons: ['bold', 'italic', 'underline', 'insertImage', 'insertLink', 'emoticons', 'undo', 'redo'],
-//      pluginsEnabled: ['image', 'link', 'draggable', 'emoticons']
-    })
-
   });
         </script>
     </body>

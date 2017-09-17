@@ -9,23 +9,16 @@ permalink: /generate/
 
         <div class="col-lg-12">
 
-            <div id="froala-editor">
-             Bootstrap: docker<br>
-             From: ubuntu:14.04<br>
-             
-             %post<br>
-             apt-get update<br><br>
+             {% include toolbar.html %}
+             <div id="textarea">Bootstrap: docker<br>From: ubuntu:14.04<br>%post<br>apt-get update<br><br>
             </div>
 
          <!-- Editor Controls -->
          <p>
-            <!--<a id="btn-clear" href="#" class="btn btn-lg btn-theme">Clear</a>-->
+            <a id="btn-clear" href="#" class="btn btn-lg btn-theme">Clear</a>
+            <!--<a id="recipe" class="btn btn-theme copyme" data-clipboard-target="textarea"><i class="fa fa-copy"></i></a>-->
          </p>
-         <h4 style="text-align:right">Singularity <a id="recipe" class="btn btn-theme copyme" data-clipboard-target="#preview"><i class="fa fa-copy"></i></a></h4>
-         <div id="preview" class="fr-view well" style="padding:20px;">
-            <p></p>
-         </div>
-
+         
         </div>
 
     </div><! --/row -->
@@ -35,7 +28,7 @@ permalink: /generate/
 <script>
 // Copy recipe to clipboard
 $('.copyme').click(function(){
-    var content = $("#preview")
+    var content = $(".ql-editor")
     console.log(content)
     var range = document.createRange();  
     range.selectNode(content[0])  
