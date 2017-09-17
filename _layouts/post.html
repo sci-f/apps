@@ -14,9 +14,8 @@ layout: default
             </p>
             {% endif %}
 
-
             {% if page.asciinema %}
-            {% include asciicast.html %}              
+            {% include asciicast.html name=page.asciinema %}  
             {% endif %}
 
             {{ content }}

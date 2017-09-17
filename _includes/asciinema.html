@@ -1,5 +1,5 @@
 <!-- asciinema player -->
-<script src="assets/js/asciinema-player.js"></script>
+<script src="/apps/assets/js/asciinema-player.js"></script>
 
 <!-- Show or hide players on button clicks-->
 <script>
@@ -9,10 +9,10 @@ $( document ).ready(function() {
 
         if ($(asciinemaVideo).hasClass('hidden')){
             $(asciinemaVideo).removeClass('hidden');
-            $(this).text('Hide Tutorial')
+            $(this).text('Hide Video')
         } else {
             $(asciinemaVideo).addClass('hidden');
-            $(this).text('Show Tutorial')
+            $(this).text('Show Video')
         }
         
     });
