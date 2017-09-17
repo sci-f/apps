@@ -3,7 +3,6 @@ title:  "Hello World (octave)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
 tags: 
-- app
 - octave
 - ubuntu
 - debian

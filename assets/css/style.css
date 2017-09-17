@@ -143,6 +143,22 @@ a:focus {
     font-size: 12px;
 }
 
+.btn-app:hover {
+  color: yellow !important;
+}
+
+.btn-app {
+  border: none;
+  outline: none;
+  background-color: darkturquoise;
+  color: white;
+  cursor: pointer;
+  margin:2px;
+  font-weight:600 !important;
+  font-size:16px !important;
+  border-radius: 10px !important;
+}
+
 .btn-theme {
   color: #999;
   background-color: #F7F7F7;

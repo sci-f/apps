@@ -30,33 +30,38 @@ layout: base
             </div>
             {% endif %}
 
-            <!-- Copy to clipboard -->
             <div class="row">
+
+                <!-- Copy to clipboard -->
                 <div class="col-md-2">
                     <button style="margin-top:55px" id="recipe" class="btn btn-theme copyme" data-clipboard-target="#recipe"><i class="fa fa-copy"></i></button>
 	        </div>
+
+                <!-- Recipe box -->
                 <div class="col-md-5">
-                    <button style="margin-top:55px" id="addapp" data-name="{{ page.slug }}" class="btn btn-theme"><i id="inrecipe" class="fa fa-star-o"></i> Add to Recipe</button>
+                    <button style="margin-top:55px" id="addapp" data-name="{{ page.slug }}" class="btn btn-theme">Add Recipe</button>
+                    <button style="margin-top:55px;display:none" id="removeapp" data-name="{{ page.slug }}" class="btn btn-theme">Remove Recipe</button>
                  </div>
                  <div class="col-md-2">
-                    <a><button style="margin-top:55px"  class="btn btn-theme"><i title="Generate" class="fa fa-gear"></i></button></a>
+                    <a href="/apps/generate/"><button style="margin-top:55px" class="btn btn-app" disabled title="coming soon!">
+                     <i style="margin-right:5px;" title="Generate" class="fa fa-gear"></i> generate</button></a>
 	        </div>
             </div>
 
             <div style="padding-bottom:20px" class="hline"></div>
             <p><b>Date: </b> {{ page.date | date: "%b %-d, %Y" }}</p>
             <p><b>Author: </b> {{ page.author }}</p>
-            {% if page.categories %}
-            <p><b>Categories:</b>{% for cat in page.categories %}
-                    {{ cat }}{% unless forloop.last %},{% endunless %}{% endfor %}</p>
-            {% endif %}
             {% if page.tags %}
-            <p><b>Tags: </b>{% for tag in page.tags %}{{ tag }} {% unless forloop.last %},{% endunless %}{% endfor %}</p>
+            <p><b>Tags: </b>
+                  {% for tag in page.tags %}<a href="/apps/tag/#block-{{ tag }}"><b style="color:{% include darkcolors.html %}; margin-right:5px;"> {{ tag }} </b></a>{% endfor %}</p>
             {% endif %}
+
             {% if page.files %}
-            <p><b>Files: </b>{% for file in page.files %}<a href="{{ file }}"> {{ file }}<br></a>{% unless forloop.last %},{% endunless %}{% endfor %}</p>
+            <p><b>Files:</b>
+                <ul style="line-height:25px">
+                   {% for file in page.files %}<a href="{{ file }}">{{ file }}</a><br>{% endfor %}
             {% endif %}
-        </div>
+        </div></p>
     </div><! --/row -->
 </div><! --/container -->
 	 
@@ -74,29 +79,47 @@ $(document).ready(function(){
 
     // If recipe in box, make filled in star
     if (Object.prototype.hasOwnProperty.call(recipes, "{{ page.slug }}")) {
-        $("#inrecipe").removeClass('fa-star-o');
-        $("#inrecipe").addClass('fa fa-star');
-        $("#addapp").attr('disabled',true)
+       $("#addapp").hide();
+       $("#removeapp").show();
     }
     console.log("Recipes in box!")
     console.log(recipes);
 })
 
+// Actions to add a recipe
 $("#addapp").click(function(){
     recipes = JSON.parse(localStorage.getItem('scif-recipes'));
     if (Object.prototype.hasOwnProperty.call(recipes, "{{ page.slug }}")){
        toast_message('This recipe is already in your box!','info');
     } else {
-       recipes["{{ page.slug }}"] = $("#recipe").text();
+       recipes["{{ page.slug }}"] = {"text": $("#recipe").text()};
+       {% if page.files %}
+            recipes["{{ page.slug }}"]['files'] = [{% for filey in page.files %}"{{ page.url }}{{ filey }}" {% unless forloop.last %},{% endunless %} {% endfor %}]
+       {% endif %}
        console.log(recipes)
        localStorage.setItem("scif-recipes", JSON.stringify(recipes))
-       $("#inrecipe").removeClass('fa-star-o');
-       $("#inrecipe").addClass('fa fa-star');
-       $("#addapp").attr('disabled',true)
+       $("#addapp").hide();
+       $("#removeapp").show();
        toast_message('Recipe added to box!','info');
     }
 })
 
+
+// Actions to remove a recipe
+$("#removeapp").click(function(){
+    recipes = JSON.parse(localStorage.getItem('scif-recipes'));
+    if (Object.prototype.hasOwnProperty.call(recipes, "{{ page.slug }}")){
+       delete recipes["{{ page.slug }}"];
+       localStorage.setItem("scif-recipes", JSON.stringify(recipes))
+       $("#removeapp").hide();
+       toast_message('Recipe removed from box.','info');
+       $("#addapp").show();
+    } else {
+       toast_message('This recipe is not in your box!','info');
+    }
+})
+
+// Copy recipe to clipboard
 $('.copyme').click(function(){
     var copy_id = $(this).attr('id')
     var content = $("code")

@@ -7,7 +7,6 @@ tags:
 - debian
 - scif
 - singularity
-- app
 - clisp
 files:
  - hello-world.clisp
