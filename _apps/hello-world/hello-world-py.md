@@ -2,10 +2,9 @@
 title:  "Hello World (python)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-img: robots/robot8.png
-thumb: robots/robot8.png
 tags: 
-- app
+- ubuntu
+- debian
 - python
 - scif
 - singularity

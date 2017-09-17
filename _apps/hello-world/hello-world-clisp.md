@@ -2,9 +2,9 @@
 title:  "Hello World (clisp)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-img: robots/robot4.png
-thumb: robots/robot4.png
 tags: 
+- ubuntu
+- debian
 - scif
 - singularity
 - app

@@ -2,13 +2,12 @@
 title:  "Hello World (awk)"
 date:   2017-08-29 16:54:46
 author: Vanessa Sochat
-img: robots/robot1.png
-thumb: robots/robot1.png
 tags: 
 - scif
 - singularity
-- app
 - awk
+- ubuntu
+- debian
 files:
  - hello-world.awk
  - SingularityApp.awk

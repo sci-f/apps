@@ -2,10 +2,9 @@
 title:  "Hello World (C++)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-img: robots/robot5.png
-thumb: robots/robot5.png
 tags: 
-- app
+- ubuntu
+- debian
 - cpp
 - scif
 - singularity

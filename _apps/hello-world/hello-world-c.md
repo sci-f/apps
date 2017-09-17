@@ -2,11 +2,10 @@
 title:  "Hello World (C)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-img: robots/robot2.png
-thumb: robots/robot3.png
 tags: 
-- app
 - c
+- ubuntu
+- debian
 - scif
 - singularity
 files:

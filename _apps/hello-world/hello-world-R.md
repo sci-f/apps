@@ -2,10 +2,9 @@
 title:  "Hello World (R)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-img: robots/robot9.png
-thumb: robots/robot9.png
 tags: 
-- app
+- ubuntu
+- debian
 - R
 - scif
 - singularity

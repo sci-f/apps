@@ -18,8 +18,17 @@ layout: base
 
         </div>
         <div style="margin-top:25px" class="col-md-2"></div>
+
         <div class="col-md-4">
             <div class="spacing"></div>
+
+            {% if page.image %}
+            <div class="row">
+                <div class="col-md-12">
+                   <img src="/apps/assets/img/{{ page.img }}" style="max-height:200px">
+	        </div>
+            </div>
+            {% endif %}
 
             <!-- Copy to clipboard -->
             <div class="row">

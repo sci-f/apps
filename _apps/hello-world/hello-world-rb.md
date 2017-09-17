@@ -2,12 +2,11 @@
 title:  "Hello World (Ruby)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-img: robots/robot10.png
-thumb: robots/robot10.png
 tags: 
 - scif
 - singularity
-- app
+- ubuntu
+- debian
 - ruby
 files:
  - hello-world.rb

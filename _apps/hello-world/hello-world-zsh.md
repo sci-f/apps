@@ -2,10 +2,9 @@
 title:  "Hello World (Zsh)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-img: robots/robot12.png
-thumb: robots/robot12.png
 tags: 
-- app
+- ubuntu
+- debian
 - zsh
 - shell
 - scif
