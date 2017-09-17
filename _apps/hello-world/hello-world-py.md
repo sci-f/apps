@@ -14,10 +14,10 @@ files:
 ---
 
 ```yaml
-%apprun python
+%apprun hello-world-python
     exec python $SINGULARITY_APPROOT/hello-world.py
-%appfiles python
+%appfiles hello-world-python
     hello-world.py
-%appinstall python
+%appinstall hello-world-python
     apt-get install -y python python-dev
 ```

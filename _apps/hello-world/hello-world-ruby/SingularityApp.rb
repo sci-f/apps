@@ -1,6 +1,6 @@
-%apprun ruby
+%apprun hello-world-ruby
     exec ruby $SINGULARITY_APPROOT/hello-world.rb
-%appfiles ruby
+%appfiles hello-world-ruby
     hello-world.rb
-%appinstall ruby
+%appinstall hello-world-ruby
     apt-get install -y ruby

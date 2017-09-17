@@ -14,10 +14,10 @@ files:
 ---
 
 ```yaml
-%apprun julia
+%apprun hello-world-julia
     exec julia $SINGULARITY_APPROOT/hello-world.jl
-%appfiles julia
+%appfiles hello-world-julia
     hello-world.jl
-%appinstall julia
+%appinstall hello-world-julia
     apt-get install -y julia
 ```

@@ -36,16 +36,6 @@ layout: base
                 <div class="col-md-2">
                     <button style="margin-top:55px" id="recipe" class="btn btn-theme copyme" data-clipboard-target="#recipe"><i class="fa fa-copy"></i></button>
 	        </div>
-
-                <!-- Recipe box -->
-                <div class="col-md-5">
-                    <button style="margin-top:55px" id="addapp" data-name="{{ page.slug }}" class="btn btn-theme">Add Recipe</button>
-                    <button style="margin-top:55px;display:none" id="removeapp" data-name="{{ page.slug }}" class="btn btn-theme">Remove Recipe</button>
-                 </div>
-                 <div class="col-md-2">
-                    <a href="/apps/generate/"><button style="margin-top:55px" class="btn btn-app" disabled title="coming soon!">
-                     <i style="margin-right:5px;" title="Generate" class="fa fa-gear"></i> generate</button></a>
-	        </div>
             </div>
 
             <div style="padding-bottom:20px" class="hline"></div>
@@ -121,7 +111,6 @@ $("#removeapp").click(function(){
 
 // Copy recipe to clipboard
 $('.copyme').click(function(){
-    var copy_id = $(this).attr('id')
     var content = $("code")
     var range = document.createRange();  
     range.selectNode(content[0])  

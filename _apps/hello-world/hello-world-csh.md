@@ -16,10 +16,10 @@ files:
 ---
 
 ```yaml
-%apprun csh
+%apprun hello-world-csh
     exec csh $SINGULARITY_APPROOT/hello-world.csh
-%appfiles csh
+%appfiles hello-world-csh
     hello-world.csh
-%appinstall csh
+%appinstall hello-world-csh
     apt-get install -y csh
 ```

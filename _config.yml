@@ -33,8 +33,8 @@ collections:
     output: true
     permalink: /scif/:path/
 
-url: "https://containers-ftw.github.io"
-repo: "https://www.github.com/containers-ftw/containers-ftw.github.io"
+url: "https://containers-ftw.github.io/apps"
+repo: "https://www.github.com/containers-ftw/apps"
 future: true
 
 defaults:

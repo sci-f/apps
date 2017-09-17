@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+    {% include head.html %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.css">
+ 
+    <!-- Include Editor style. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.6/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.6/css/froala_style.min.css" rel="stylesheet" type="text/css" />
+    <body>
+        {% include wrap.html %}
+        {% include nav.html %}
+
+        <!-- Include external JS libs. -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="{{ "/assets/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/assets/js/retina-1.1.0.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/assets/js/jquery.hoverdir.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/assets/js/jquery.hoverex.min.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/assets/js/jquery.prettyPhoto.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/assets/js/jquery.isotope.min.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/assets/js/toastr.min.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/assets/tipuesearch/tipuesearch_content.js" | relative_url }}"></script>
+        <script src="{{ "/assets/tipuesearch/tipuesearch_set.js" | relative_url }}"></script>
+        <script src="{{ "/assets/tipuesearch/tipuesearch.min.js" | relative_url }}"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/codemirror.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.25.0/mode/xml/xml.min.js"></script>
+ 
+        <!-- Include Editor JS files. -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.6/js/froala_editor.pkgd.min.js"></script>
+
+        {{ content }}
+ 
+        {% include footer.html %}
+        <!-- Initialize the editor. -->
+        <script> 
+$(function() {
+
+// Download function
+function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+}
+
+String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.split(search).join(replacement);
+};
+
+function html2text( html ) {
+    var d = document.createElement( 'div' );
+    console.log(html)
+    html = html.replaceAll('<p></p>','<br>')
+    console.log(html)
+    d.innerHTML = html;
+    return d.textContent;
+}
+
+    $.FroalaEditor.DefineIcon('saveSelection', {NAME: 'download'});
+    $.FroalaEditor.RegisterCommand('saveSelection', {
+      title: 'Download',
+      focus: true,
+      undo: false,
+      refreshAfterCallback: false,
+      callback: function () {
+        var text = this.html.get().replace('<p>','') // First line
+        var text = text.replaceAll('<p></p>','\n').replaceAll('<p>','\n').replaceAll('<\p>','\n').replaceAll('<br>','\n')
+        var text = text.replace(/(<([^>]+)>)/g, "");
+        download('Singularity', text)
+        this.selection.save();
+      }
+    });
+ 
+    $('div#froala-editor')
+   
+    .on('froalaEditor.contentChanged', function (e, editor) {
+      $('#preview').html(editor.html.get());
+    })
+    
+    .on('froalaEditor.initialized', function (e, editor) {
+
+
+        // Load Recipes
+        if (localStorage.getItem("scif-recipes") === null) {  
+
+         editor.html.insert("# You don't have any app recipes saved!\n");
+         editor.html.insert("# Try <a href='/apps/tag/'> browsing </a> for some.");
+
+        } else {
+           recipes = JSON.parse(localStorage.getItem('scif-recipes'));
+           $.each( recipes, function( name, content ) {
+               text = content.text.replace(/(?:\r\n|\r|\n)/g, '<br />').replace('<br />','').trim();
+               editor.html.insert("# " + name + "<br />");
+               editor.html.insert(text);
+
+           });
+        }
+        
+        // Save into undo stack the changes.
+        editor.undo.saveStep();
+ 
+    })
+    .froalaEditor({
+      toolbarButtons: [  'saveSelection', 'restoreSelection', 'clearSelection', 'bold', 'italic', 'underline', 'insertImage', 'insertLink', 'emoticons', 'undo', 'redo' ]
+
+//      toolbarButtons: ['bold', 'italic', 'underline', 'insertImage', 'insertLink', 'emoticons', 'undo', 'redo'],
+//      pluginsEnabled: ['image', 'link', 'draggable', 'emoticons']
+    })
+
+  });
+        </script>
+    </body>
+</html>

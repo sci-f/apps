@@ -14,10 +14,10 @@ files:
 ---
 
 ```yaml
-%apprun clisp
+%apprun hello-world-clisp
     exec clisp $SINGULARITY_APPROOT/hello-world.clisp
-%appfiles clisp
+%appfiles hello-world-clisp
     hello-world.clisp
-%appinstall clisp
+%appinstall hello-world-clisp
     apt-get install -y clisp
 ```

@@ -12,10 +12,9 @@ tags:
 files:
  - hello-world.bash
 ---
-
-```yaml
-%apprun bash
+```
+%apprun hello-world-ash
     exec /bin/bash hello-world.bash
-%appfiles bash
+%appfiles hello-world-bash
     hello-world.bash bin/hello-world.bash
 ```

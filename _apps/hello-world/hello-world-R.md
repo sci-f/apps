@@ -14,10 +14,10 @@ files:
 ---
 
 ```yaml
-%apprun R
+%apprun hello-world-R
     exec Rscript $SINGULARITY_APPROOT/hello-world.R
-%appfiles R
+%appfiles hello-world-R
     hello-world.R
-%appinstall R
+%appinstall hello-world-R
     apt-get install -y r-base
 ```

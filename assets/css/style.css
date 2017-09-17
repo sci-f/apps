@@ -147,6 +147,14 @@ a:focus {
   color: yellow !important;
 }
 
+.drag-text {
+  color: #333 !important;
+}
+
+.recipe-editor {
+  color: #333 !important;
+}
+
 .btn-app {
   border: none;
   outline: none;
@@ -171,7 +179,7 @@ a:focus {
 .btn-theme.active,
 .open .dropdown-toggle.btn-theme {
   color: #fff !important;
-  background-color: #159958;
+  background-color: #159958 !important;
   border-color: #159958;
 }
 
@@ -510,4 +518,28 @@ pre {
     margin-top:30px;
     margin-bottom:30px;
     padding:20px
+}
+
+/* Highlight */
+
+p.red::selection {
+  background: #ffb7b7;
+}
+p.red::-moz-selection {
+  background: #ffb7b7;
+}
+#preview p {
+ color: #333;
+}
+#preview p::selection {
+  background: #a8d1ff !important;
+}
+#preview p::-moz-selection {
+  background: #a8d1ff !important;
+}
+p.yellow::selection {
+  background: #fff2a8;
+}
+p.yellow::-moz-selection {
+  background: #fff2a8;
 }

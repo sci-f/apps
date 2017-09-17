@@ -14,8 +14,8 @@ files:
 ---
 
 ```yaml
-%apprun cat
+%apprun hello-world-cat
     exec cat $SINGULARITY_APPROOT/hello-world.cat
-%appfiles cat
+%appfiles hello-world-cat
     hello-world.cat
 ```

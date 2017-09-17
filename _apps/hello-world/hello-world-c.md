@@ -18,7 +18,7 @@ files:
     exec hello-world.c
 %appfiles c
     hello-world.c
-%appinstall c
+%appinstall hello-world-c
     apt-get install -y gcc
     gcc hello-world.c -o bin/hello-world.c
 ```

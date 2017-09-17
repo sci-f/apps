@@ -1,0 +1,57 @@
+---
+layout: editor
+title: Generate
+permalink: /generate/
+---
+
+<div class="container mtb">
+    <div class="row">
+
+        <div class="col-lg-12">
+
+            <div id="froala-editor">
+             Bootstrap: docker<br>
+             From: ubuntu:14.04<br>
+             
+             %post<br>
+             apt-get update<br><br>
+            </div>
+
+         <!-- Editor Controls -->
+         <p>
+            <!--<a id="btn-clear" href="#" class="btn btn-lg btn-theme">Clear</a>-->
+         </p>
+         <h4 style="text-align:right">Singularity <a id="recipe" class="btn btn-theme copyme" data-clipboard-target="#preview"><i class="fa fa-copy"></i></a></h4>
+         <div id="preview" class="fr-view well" style="padding:20px;">
+            <p></p>
+         </div>
+
+        </div>
+
+    </div><! --/row -->
+</div><! --/container -->
+
+{% include notification.html %}
+<script>
+// Copy recipe to clipboard
+$('.copyme').click(function(){
+    var content = $("#preview")
+    console.log(content)
+    var range = document.createRange();  
+    range.selectNode(content[0])  
+    window.getSelection().addRange(range)
+
+  try {  
+        // Now that we've selected the anchor text, execute the copy command  
+        var successful = document.execCommand('copy');  
+        var msg = successful ? 'successful' : 'unsuccessful';  
+        toast_message('Copy ' + msg)
+      }  catch(err) {  
+        toast_message('Oops, unable to copy');  
+      }  
+
+    // removeRange(range) when it is supported  
+    window.getSelection().removeAllRanges();  
+
+});
+</script>

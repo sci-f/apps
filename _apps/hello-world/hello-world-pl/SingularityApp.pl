@@ -1,6 +1,6 @@
-%apprun perl
+%apprun hello-world-perl
     exec perl6 $SINGULARITY_APPROOT/hello-world.pl
-%appfiles perl
+%appfiles hello-world-perl
     hello-world.pl
-%appinstall perl
+%appinstall hello-world-perl
     apt-get install -y perl6
