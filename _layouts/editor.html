@@ -159,14 +159,16 @@ $(function() {
 
  
         } else {
+
            recipes = JSON.parse(localStorage.getItem('scif-recipes'));
+           zip.file("README.md", urlToPromise("/apps/scif/README"), {binary:true});
+
            $.each( recipes, function( name, content ) {
                text = content.text.replace(/(?:\r\n|\r|\n)/g, '\n').replace('<br />','\n').trim();
                add_text(editor,"# " + name + "\n");
                add_text(editor,text);
 
                // Add files to zip
-               zip.file("README.md", urlToPromise("/apps/scif/README"), {binary:true});
                if (Object.prototype.hasOwnProperty.call(content, 'files')) {
                    var files = content.files
                    $.each( files, function( idx, file ) {
