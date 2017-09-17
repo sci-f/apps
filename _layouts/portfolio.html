@@ -4,24 +4,24 @@ layout: base
 
 {{ content }}
 
+{% include tags.html %}
+
 <div id="portfoliowrap">
     <div class="portfolio-centered">
         {% if include.title %}<h3>{{ include.title }}</h3>{% endif %}
         <div class="recentitems portfolio">
-            {% for app in site.apps limit:include.limit %}
-                {% if app.date %}
-                <div class="portfolio-item graphic-design">
+            {% for tag in tags %}
+                <div class="portfolio-item graphic-design" style="background-color:{% include colors.html %}">
                     <div class="he-wrap tpl6">
-                    <img style="max-height:180px; padding-top:20px; padding-bottom:20px;" src="{{ "/assets/img/app/" | prepend: site.baseurl }}{{ app.img }}" alt="">
+                    <img style="max-height:180px; padding-top:20px; padding-bottom:20px;" src="{{ "/assets/img/" | prepend: site.baseurl }}{% include robots.html %}" alt="">
                         <div class="he-view">
                             <div class="bg a0" data-animate="fadeIn">
-                                <h3 class="a1" style='color:white' data-animate="fadeInDown">{{ app.title }}</h3>
-                                <a href="{{  app.url | prepend: site.baseurl }}" class="dmbutton a2" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
+                                <h3 class="a1" style="color:white; font-size:40px" data-animate="fadeInDown">{{ tag }}</h3>
+                                <a href="/apps/tag/#block-{{ tag }}" class="dmbutton a2" style="margin:0px;" data-animate="fadeInUp"><i class="fa fa-link"></i></a>
                             </div><!-- he bg -->
                         </div><!-- he view -->
                     </div><!-- he wrap -->
                 </div><!-- end col-12 -->
-                {% endif %}
             {% endfor %}
         </div><!-- portfolio -->
     </div><!-- portfolio container -->

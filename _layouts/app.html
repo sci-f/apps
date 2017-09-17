@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: base
 ---
 
 <div class="container mt">
@@ -9,9 +9,9 @@ layout: default
 
         <div style="margin-top:25px" class="col-md-6">
 
-            <h4>SingularityApp.{{ page.slug }}</h4>
+            <h5 style='font-weight:600'>SingularityApp.{{ page.slug }}</h5>
             <div class="spacing"></div>
-
+            
             <div id="recipe">
             {{ content }}
             </div>
@@ -24,7 +24,13 @@ layout: default
             <!-- Copy to clipboard -->
             <div class="row">
                 <div class="col-md-2">
-                    <button style="margin-top:55px" id="recipe" class="btn copyme" data-clipboard-target="#recipe"><i class="fa fa-copy"></i></button>
+                    <button style="margin-top:55px" id="recipe" class="btn btn-theme copyme" data-clipboard-target="#recipe"><i class="fa fa-copy"></i></button>
+	        </div>
+                <div class="col-md-5">
+                    <button style="margin-top:55px" id="addapp" data-name="{{ page.slug }}" class="btn btn-theme"><i id="inrecipe" class="fa fa-star-o"></i> Add to Recipe</button>
+                 </div>
+                 <div class="col-md-2">
+                    <a><button style="margin-top:55px"  class="btn btn-theme"><i title="Generate" class="fa fa-gear"></i></button></a>
 	        </div>
             </div>
 
@@ -47,6 +53,41 @@ layout: default
 	 
 {% include notification.html %}
 <script>
+var recipes;
+
+$(document).ready(function(){
+    if (localStorage.getItem("scif-recipes") === null) {  
+        recipes = "{}";
+        localStorage.setItem("scif-recipes", recipes)
+    } else {
+       recipes = JSON.parse(localStorage.getItem('scif-recipes'));
+    }
+
+    // If recipe in box, make filled in star
+    if (Object.prototype.hasOwnProperty.call(recipes, "{{ page.slug }}")) {
+        $("#inrecipe").removeClass('fa-star-o');
+        $("#inrecipe").addClass('fa fa-star');
+        $("#addapp").attr('disabled',true)
+    }
+    console.log("Recipes in box!")
+    console.log(recipes);
+})
+
+$("#addapp").click(function(){
+    recipes = JSON.parse(localStorage.getItem('scif-recipes'));
+    if (Object.prototype.hasOwnProperty.call(recipes, "{{ page.slug }}")){
+       toast_message('This recipe is already in your box!','info');
+    } else {
+       recipes["{{ page.slug }}"] = $("#recipe").text();
+       console.log(recipes)
+       localStorage.setItem("scif-recipes", JSON.stringify(recipes))
+       $("#inrecipe").removeClass('fa-star-o');
+       $("#inrecipe").addClass('fa fa-star');
+       $("#addapp").attr('disabled',true)
+       toast_message('Recipe added to box!','info');
+    }
+})
+
 $('.copyme').click(function(){
     var copy_id = $(this).attr('id')
     var content = $("code")

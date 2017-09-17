@@ -154,7 +154,7 @@ a:focus {
 .btn-theme:active,
 .btn-theme.active,
 .open .dropdown-toggle.btn-theme {
-  color: #fff;
+  color: #fff !important;
   background-color: #159958;
   border-color: #159958;
 }

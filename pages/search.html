@@ -17,7 +17,7 @@ exclude_from_search: true
     <div class="list-group">
     {% for tag in tags %}
         <a href="/apps/search?q={{ tag }}" class="list-group-item">
-            <h4 class="list-group-item-heading">{{ tag }}</h4>
+            <h4 class="list-group-item-heading" style="font-weight:600;color:{% include darkcolors.html %}">{{ tag }}</h4>
         </a>
     {% endfor %}
     </div>

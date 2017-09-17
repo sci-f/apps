@@ -1,0 +1,49 @@
+---
+title: Tag
+description: "Search Apps"
+layout: base
+permalink: /tag
+tipue_search_active: true
+exclude_from_search: true
+---
+
+{% include scrolltop.html %}
+<div class="row" style="margin:25px; padding:30px">
+    <div class="col-lg-10">
+    {% include tags.html %}
+
+    {% for tag in tags %}
+        <hr id="block-{{ tag }}">
+        <div>
+            <div class="row" style='margin-top:40px'>
+                <div class="col-md-12">
+                    <h4 class="list-group-item-heading" style="font-weight:600;font-size:180px;color:{% include darkcolors.html %}">{{ tag }}</h4>
+                </div>
+            </div>
+            {% for app in site.apps %}
+               {% if app.tags contains tag %}
+                   {% if app.date %}
+                   <h2 style="margin:25px"> 
+                       <img style="max-width:50px; padding-right:20px; float:left;" 
+                        src="{{ "/assets/img/" | prepend: site.baseurl }}{% include robots.html %}">
+                        <a class="post-link" 
+                          href="{{  app.url | prepend: site.baseurl }}">{{ app.title }}</a></h2>
+                   <span class="post-meta">{{ app.date | date: "%b %-d, %Y" }}</span>
+                   {% endif %}
+               {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+    </div>
+    <div class="col-md-2">    
+
+    <div class="list-group">
+    {% for tag in tags %}
+        <a href="#block-{{ tag }}" class="list-group-item">
+            <h4 class="list-group-item-heading" style="font-weight:600;">{{ tag }}</h4>
+        </a>
+    {% endfor %}
+    </div>
+
+    </div>
+</div>
