@@ -84,7 +84,7 @@ $("#addapp").click(function(){
     } else {
        recipes["{{ page.slug }}"] = {"text": $("#recipe").text()};
        {% if page.files %}
-            recipes["{{ page.slug }}"]['files'] = [{% for filey in page.files %}"{{ page.url }}{{ filey }}" {% unless forloop.last %},{% endunless %} {% endfor %}]
+            recipes["{{ page.slug }}"]['files'] = [{% for filey in page.files %}"/apps{{ page.url }}{{ filey }}" {% unless forloop.last %},{% endunless %} {% endfor %}]
        {% endif %}
        console.log(recipes)
        localStorage.setItem("scif-recipes", JSON.stringify(recipes))
