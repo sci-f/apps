@@ -7,7 +7,7 @@ layout: base
 
         {% include appheader.html %}
 
-        <div style="margin-top:25px" class="col-md-6">
+        <div style="margin-top:25px" class="col-md-9">
 
             <h5 style='font-weight:600'>SingularityApp.{{ page.slug }}</h5>
             <div class="spacing"></div>
@@ -17,9 +17,8 @@ layout: base
             </div>
 
         </div>
-        <div style="margin-top:25px" class="col-md-2"></div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="spacing"></div>
 
             {% if page.image %}
@@ -59,7 +58,46 @@ layout: base
 <script>
 var recipes;
 
+// Generate json on the fly
+var metadata = {"links": { "self": "{{ site.url }}{{ page.path }}?json=1",
+                           "url": "{{ site.url }}{{ page.path }}?json=1",
+                           "next": "{{ site.url }}{{ page.next.path }}?json=1",
+                           "previous": "{{ site.url }}{{ page.previous.path }}?json=1"},
+
+                "data": {  "id": "{{ page.url | replace:'.html','.md' | replace: '/scif/', '' }}",
+                           "author": "{{ page.author }}",
+                           {% if page.tags %}"tags": [{% for tag in page.tags %}"{{ tag }}"{% if forloop.last %}{% else %},{% endif %}{% endfor %}],{% endif %}
+                           {% if page.files %}"files": [{% for file in page.files %}"{{ site.baseurl }}/apps{{ page.url }}{{ file }}"{% if forloop.last %}{% else %},{% endif %}{% endfor %}],{% endif %}
+
+                 }
+               }
+
+console.log(metadata)
+
 $(document).ready(function(){
+
+    function $_GET(param) {
+	var vars = {};
+	window.location.href.replace( location.hash, '' ).replace( 
+		/[?&]+([^=&]+)=?([^&]*)?/gi, // regexp
+		function( m, key, value ) { // callback
+			vars[key] = value !== undefined ? value : '';
+		}
+	);
+	if ( param ) {
+		return vars[param] ? vars[param] : null;	
+	}
+	return vars;
+    }
+
+    // If user asking for json, return it
+    if ($_GET('json') == 1){
+       $("code").text(JSON.stringify(metadata, null, '\t'))
+       $("#self").show();
+       $("#json").hide();
+    }
+    
+    // Recipes
     if (localStorage.getItem("scif-recipes") === null) {  
         recipes = "{}";
         localStorage.setItem("scif-recipes", recipes)
@@ -72,8 +110,7 @@ $(document).ready(function(){
        $("#addapp").hide();
        $("#removeapp").show();
     }
-    console.log("Recipes in box!")
-    console.log(recipes);
+
 })
 
 // Actions to add a recipe
@@ -93,7 +130,6 @@ $("#addapp").click(function(){
        toast_message('Recipe added to box!','info');
     }
 })
-
 
 // Actions to remove a recipe
 $("#removeapp").click(function(){

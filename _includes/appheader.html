@@ -6,14 +6,15 @@
   <div class="container">
     <h1 class="lobster-font">{{ page.title }}</h1>
     <p>
-    <a class="btn btn-lg btn-theme" href="/apps{{ page.url | replace: '/scif/', '/api/' }}/data.json" target="_blank" role="button">json</a>
-    <a href="/apps/generate/"  class="btn btn-lg btn-theme" style="background-color:darkturquoise; color:white" title="coming soon!">
+    <a class="btn btn-lg btn-theme" id="json" href="/apps{{ page.url }}?json=1" style="width:67px" role="button">json</a>
+    <a class="btn btn-lg btn-theme" id="self" href="/apps{{ page.url }}" style="display:none; width:67px" role="button">scif</a>
+    <a href="/apps/generate/"  class="btn btn-lg btn-theme" style="background-color:darkturquoise; color:white">
                      <i style="margin-right:5px;" title="Generate" class="fa fa-gear"></i> generate</a>
 
     <a id="addapp" data-name="{{ page.slug }}" style="background-color:mediumseagreen; color:white" class="btn btn-lg btn-theme"> add recipe </a>
     <a style="display:none;background-color:mediumseagreen; color:white" id="removeapp" data-name="{{ page.slug }}" class="btn btn-lg btn-theme"> remove recipe </a>
-    <a class="btn btn-lg btn-theme" target="_blank" href="{{ site.repo }}/blob/master/{{ page.path }}" role="button">
-    <i style="margin-right:5px;" title="Github" class="fa fa-github"></i></a>
+    <a class="btn btn-lg btn-theme" target="_blank" href="{{ site.repo }}/blob/master/{{ page.path }}" role="button" style="padding: 4px;text-align: center;width: 65px;">
+    <i style="margin-right:5px;" title="Github" class="fa fa-github fa-2x"></i></a>
 
 </p>
   </div>
