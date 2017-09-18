@@ -86,6 +86,7 @@ exclude:
   - Gemfile.lock
   - _templates
   - README.md
+  - tests 
 
 # asciinema defaults
 asciicast:
