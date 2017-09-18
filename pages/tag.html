@@ -28,7 +28,7 @@ exclude_from_search: true
                         src="{{ "/assets/img/" | prepend: site.baseurl }}{% include robots.html %}">
                         <a class="post-link" 
                           href="{{  app.url | prepend: site.baseurl }}">{{ app.title }}</a></h2>
-                   <span class="post-meta">{{ app.date | date: "%b %-d, %Y" }}</span>
+                   <p style="font-size:14px;color:#666;">{{ app.date | date: "%b %-d, %Y" }}</p>
                    {% endif %}
                {% endif %}
             {% endfor %}
