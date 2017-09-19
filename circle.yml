@@ -6,7 +6,9 @@ dependencies:
   pre:
     - rvm --ruby-version use 2.3.1
     - bundle install
-    - bundle exec jekyll build
+    - echo $PWD
+    - ls
+    - cd apps && bundle exec jekyll build
 
 general:
   artifacts:
@@ -18,6 +20,4 @@ test:
 
 test:
   post:
-    - rm -rf /home/ubuntu/apps/vendor/bundle/ruby/2.3.0/gems/jekyll-3.5.2/lib/site_template
-    - bundle exec jekyll build
     - python tests/circle_urls.py ./_site
