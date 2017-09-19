@@ -14,9 +14,9 @@ files:
 ---
 
 ```yaml
-%apprun c
+%apprun hello-world-c
     exec hello-world.c
-%appfiles c
+%appfiles hello-world-c
     hello-world.c
 %appinstall hello-world-c
     apt-get install -y gcc

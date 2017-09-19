@@ -1,0 +1,24 @@
+machine:
+  ruby:
+    version: 2.3.1
+
+dependencies:
+  pre:
+    - sudo apt-get install -y python-yaml wget
+    - cd /tmp && wget http://pyyaml.org/download/pyyaml/PyYAML-3.12.tar.gz && tar -xzvf PyYAML-3.12.tar.gz && cd PyYAML-3.12 && python setup.py install && cd /home/ubuntu/apps
+    - rvm --ruby-version use 2.3.1
+    - bundle install
+    - rm -rf vendor
+    - bundle exec jekyll build
+
+general:
+  artifacts:
+    - "./_site"
+
+test:
+  override:
+    - python -m tests.test_recipes
+
+test:
+  post:
+    - python tests/circle_urls.py ./_site

@@ -5,12 +5,13 @@ author: Vanessa Sochat
 tags: 
 - scif
 - help
+- linux
 - singularity
 ---
 
 ```yaml
 
-%apphelp scif-help
+%apphelp docs-scif-help
 
 A Standard Container Integration Format (SCI-F)
 apps container makes it easy to run various 

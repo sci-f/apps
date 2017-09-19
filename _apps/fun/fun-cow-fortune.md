@@ -11,9 +11,9 @@ tags:
 ---
 
 ```yaml
-%appinstall cow-fortune
+%appinstall fun-cow-fortune
     apt-get install -y lolcat fortune
-%apprun cow-fortune
+%apprun fun-cow-fortune
     /usr/games/fortune | /usr/games/lolcat
     apt-get moo
 ```
