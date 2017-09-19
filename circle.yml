@@ -6,9 +6,8 @@ dependencies:
   pre:
     - rvm --ruby-version use 2.3.1
     - bundle install
-    - echo $PWD
-    - ls
-    - cd apps && bundle exec jekyll build
+    - rm -rf vendor
+    - bundle exec jekyll build
 
 general:
   artifacts:
