@@ -11,9 +11,9 @@ tags:
 ---
 
 ```yaml
-%appinstall metrics-parallel
+%appinstall metrics-bash-parallel
     apt-get install -y parallel
-%apprun metrics-parallel
+%apprun metrics-bash-parallel
     unset SINGULARITY_APPNAME
     COMMAND="/.singularity.d/actions/run"
     parallel /bin/bash ::: $COMMAND $COMMAND $COMMAND

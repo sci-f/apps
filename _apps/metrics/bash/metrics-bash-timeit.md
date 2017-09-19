@@ -11,9 +11,9 @@ tags:
 ---
 
 ```yaml
-%appinstall metrics-timeit
+%appinstall metrics-bash-timeit
     apt-get install -y time
-%apprun metrics-timeit
+%apprun metrics-bash-timeit
     TIME="%C    %E    %K    %I    %M    %O    %P    %U    %W    %X    %e    %k    %p    %r    %s    %t    %w"
     unset SINGULARITY_APPNAME
     export TIME

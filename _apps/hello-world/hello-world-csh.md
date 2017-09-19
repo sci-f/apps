@@ -2,7 +2,6 @@
 title:  "Hello World (csh)"
 date:   2017-09-15 12:00:00
 author: Vanessa Sochat
-categories:
 tags: 
 - scif
 - singularity
@@ -12,7 +11,7 @@ tags:
 - shell
 files:
  - hello-world.csh
- - SingularityApp.c
+ - SingularityApp.csh
 ---
 
 ```yaml

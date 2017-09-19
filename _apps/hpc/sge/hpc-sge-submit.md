@@ -14,7 +14,7 @@ tags:
 ```yaml
 %apphelp hpc-sge-submit
 This will print (to the console) an sge submission script.
-Note that you can measure time using the %appinstall example,
+Note that you can measure time using the appinstall example,
 or remove these lines and provide and export the variables
 to the app's environment.
 
