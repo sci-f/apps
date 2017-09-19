@@ -11,7 +11,7 @@ import sys
 import yaml
 from fnmatch import fnmatch
 from datetime import datetime
-from .defaults import (
+from defaults import (
     Header, 
     Sections
 )
