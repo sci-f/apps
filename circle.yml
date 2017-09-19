@@ -4,7 +4,8 @@ machine:
 
 dependencies:
   pre:
-    - sudo apt-get install -y python-yaml
+    - sudo apt-get install -y python-yaml wget
+     - cd /tmp && wget http://pyyaml.org/download/pyyaml/PyYAML-3.12.tar.gz && tar -xzvf PyYAML-3.12.tar.gz && cd PyYAML-3.12 && python setup.py install && cd /home/ubuntu/apps
     - rvm --ruby-version use 2.3.1
     - bundle install
     - rm -rf vendor
