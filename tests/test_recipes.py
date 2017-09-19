@@ -11,10 +11,11 @@ import sys
 import yaml
 from fnmatch import fnmatch
 from datetime import datetime
-from defaults import (
-    Header, 
-    Sections
-)
+try:
+    from defaults import Header, Sections
+except:
+    from .defaults import Header, Sections
+
 
 from unittest import TestCase
 
