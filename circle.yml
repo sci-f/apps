@@ -14,9 +14,10 @@ general:
 
 test:
   override:
-    - python -m tests/test_recipes
+    - python -m tests.test_recipes
 
 test:
   post:
+    - rm -rf /home/ubuntu/apps/vendor/bundle/ruby/2.3.0/gems/jekyll-3.5.2/lib/site_template
     - bundle exec jekyll build
     - python tests/circle_urls.py ./_site
