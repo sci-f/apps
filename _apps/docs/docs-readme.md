@@ -4,7 +4,7 @@ date:   2017-09-20 08:25:00
 author: Vanessa Sochat
 tags: 
 - scif
-- readme
+- help
 - linux
 - singularity
 ---
