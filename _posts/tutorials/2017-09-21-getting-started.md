@@ -152,7 +152,7 @@ singularity exec --app lolcat scif.img env | grep lolcat
 
 SINGULARITY_APPOUTPUT=/scif/data/lolcat/output
 BEST_APP=lolcat
-LD_LIBRARY_PATH=/scif/apps/lolcat/lib::/.singularity.d/libs
+LD_LIBRARY_PATH=/scif/apps/lolcat/lib:/.singularity.d/libs
 APPDATA_lolcat=/scif/data/lolcat
 SINGULARITY_APPDATA=/scif/data/lolcat
 PATH=/scif/apps/lolcat/bin:/scif/apps/lolcat:/usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
@@ -220,6 +220,7 @@ Specifically, SCI-F defines the following new sections for the build recipe, whe
  - `%appinstall` corresponds to executing commands within the folder to install the 
 application. These commands would previously belong in %post, but are now attributable 
 to the application.
+ - `%appfiles` will add files relevant to the app's base. The folders `bin` and `lib` are provided, along with `scif` for runscript. help, labels, and environment.
  - `%apphelp` is written as a file called runscript.help in the application's metadata folder, 
 where the Singularity software knows where to find it. If no help section is provided, the 
 software simply will alert the user and show the files provided for inspection.
@@ -235,7 +236,21 @@ Singularity containers are already reproducible in that they package dependencie
 
 
 ## Cowsay Container
-Now let's go through the tutorial to build our <a href="https://github.com/singularityware/singularity/blob/development/examples/apps/Singularity.cowsay" target='_blank'>cowsay container.</a> First, download the recipe, and save it to your present working directory:
+Now let's go through the tutorial to build our <a href="https://github.com/singularityware/singularity/blob/development/examples/apps/Singularity.cowsay" target='_blank'>cowsay container.</a> 
+
+
+**Important!** This tutorial is for Singularity 2.4, which is still under the development branch. You need to clone development and install it first before using the build command:
+
+```
+git clone -b development https://www.github.com/singularityware/singularity.git
+cd singularity
+./autogen.sh
+./configure --prefix=/usr/local
+make
+sudo make install
+```
+
+When you've installed 2.4, download the recipe, and save it to your present working directory. By the way, credit for anything and everything lolcat and cowsay goes to <a href="https://www.github.com/GodLoveD" target="_blank">@GodLoveD</a>! Here is the recipe:
 
 ```
 wget https://raw.githubusercontent.com/singularityware/singularity/development/examples/apps/Singularity.cowsay
@@ -327,8 +342,7 @@ $CMD fortune moo.img | $CMD cowsay moo.img | $CMD lolcat moo.img
 
 ```
 
-
-Finally, inspect an app
+Yes, you need to watch the asciinema to see the colors. Finally, inspect an app:
 
 ```
  singularity inspect --app fortune moo.img 
