@@ -1,14 +1,16 @@
-<button style='color:white;margin-top:5px' class="btn btn-primary btn-lg asciinema-button" id="{{ include.title | replace:' ','-' }}">Show Video Tutorial</button>
-<div class="hidden" id="asciinema-{{ include.title | replace:' ','-' }}">
+<button style='color:white;margin-top:10px;margin-bottom:10px' 
+        class="btn btn-primary btn-lg asciinema-button" 
+        id="{{ include.title | replace:' ','-' }}">Show Video</button>
+<div class="hidden" id="asciinema-{{ include.title | replace:' ','-' }}" 
+     style="margin-top:30px;margin-bottom:30px">
     <asciinema-player 
-        src="assets/asciicast/{{include.source}}" 
+        src="/apps/assets/asciinema/{{include.name}}" 
         poster="data:text/plain,{{include.title}}" 
         title="{{include.title}}" 
-        author="{{include.author}}" 
+        author="{{page.author}}" 
         cols="{{include.cols}}"
         rows="{{include.rows}}" 
-        speed="{{site.asciicast.speed}}" 
+        speed="{{include.speed}}" 
         theme="{{site.asciicast.theme}}">
     </asciinema-player>
 </div>
-
