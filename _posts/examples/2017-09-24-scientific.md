@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Singularity Scientific Workflor with SCI-F Example"
+title:  "Singularity Scientific Workflow with SCI-F Example"
 author: Vanessasaurus
 date:   2017-09-24 21:12:01 -0600
 github: https://github.com/containers-ftw/scientific-example-ftw
