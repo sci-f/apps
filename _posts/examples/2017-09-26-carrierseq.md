@@ -281,6 +281,7 @@ sra-toolkit
 
 each of which might be run, exec to activate the app environment, or shell to shell into the container under the context of a specific app:
 
+
 ```
 # Open interactive python
 singularity run --app python carrierseq.dev.img
