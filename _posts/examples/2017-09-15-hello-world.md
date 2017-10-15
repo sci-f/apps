@@ -19,7 +19,7 @@ To demonstrate this use case, we developed a container that implements the most 
 
 ```
 $ singularity help container.img
-```
+
 
 This container will say hello-world (in dinosaur)!
 
