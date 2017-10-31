@@ -32,7 +32,7 @@ files:
     rm -rf ./samtools-1.3.1
 %appfiles bioinformatics-samtools
 %appenv bioinformatics-samtools
-    SAMTOOLS_HOME="/scif/apps/bioinformatics-samqtools"
+    SAMTOOLS_HOME="/scif/apps/bioinformatics-samtools"
     export SAMTOOLS_HOME
 %apphelp bioinformatics-samtools
     Samtools is a suite of programs for interacting with high-throughput sequencing data. It consists of three separate repositories:

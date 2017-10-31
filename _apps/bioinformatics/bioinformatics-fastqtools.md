@@ -40,8 +40,8 @@ files:
     cp  fastq-tools-0.8/src/fastq-qscale  bin/
     #rm -rf fastq-tools-0.8
 %appfiles bioinformatics-fastqtools
-    fastq-tools bin/
-%appenv fastq-tools
+    fastqtools bin/
+%appenv bioinformatics-fastqtools
     FASTQTOOLS_HOME="/scif/apps/bioinformatics-fastqtools"
     export FASTQTOOLS_HOME
 %apphelp bioinformatics-fastqtools
