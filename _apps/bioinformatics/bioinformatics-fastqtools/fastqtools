@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo fastqtools v0.8
+echo ===============
+echo the following commands are available:
+ls -1 ${FASTQTOOLS_HOME}/bin
+echo
+
+echo "Usage:"
+echo "singularity exec --app bioinformatics-fastqtools <container> <command>"
+echo

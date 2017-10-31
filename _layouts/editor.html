@@ -106,7 +106,7 @@ $(function() {
     
     var customButton = document.querySelector('#download');
         customButton.addEventListener('click', function() {
-            var text = $('.ql-editor').html().replace('<p>','') // First line
+            var text = $('.ql-editor').html().replace('<p>','').replaceAll('&amp;','&') // First line
             var text = text.replaceAll('<p></p>','\n').replaceAll('<p>','\n').replaceAll('<\p>','\n').replaceAll('<br>','\n')
             var text = text.replace(/(<([^>]+)>)/g, "");
             download('Singularity', text)
@@ -145,6 +145,7 @@ $(function() {
 
     editor = new Quill('#textarea', options);
    
+
     // Add recipe text
    function add_text(editor,content) {
        var length = editor.getLength() + 1;
