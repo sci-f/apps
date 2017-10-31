@@ -1,0 +1,27 @@
+%appinstall fastqtools
+     apt-get -y install libpcre3-dev
+     apt-get -y install zlibc
+
+%appfiles fastqtools
+
+    fastq-tools   bin/
+    fastq-kmers   bin/
+    fastq-match   bin/
+    fastq-uniq    bin/
+    fastq-qual    bin/
+    fastq-sample  bin/
+    fastq-qualadj bin/
+    fastq-sort    bin/
+    fastq-qscale  bin/
+
+%appenv fastqtools
+    FASTQTOOLS_HOME=${APPROOT_fastqtools}
+    export FASTQTOOLS_HOME
+
+%apphelp fastqtools
+    fastqtools provide a number of small and efficient programs to perform common tasks
+    with high throughput sequencing data in the FASTQ format.
+    All of the programs work with typical FASTQ files as well as gzipped FASTQ files.
+
+%apprun fastqtools
+    fastqtools "$@"
