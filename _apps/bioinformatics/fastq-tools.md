@@ -10,31 +10,50 @@ tags:
 - scif
 - singularity
 files:
- - hello-world.R
+ -  fastq-tools
+    fastq-kmers
+    fastq-match
+    fastq-uniq
+    fastq-qual
+    fastq-sample
+    fastq-qualadj
+    fastq-sort
+    fastq-qscale
  - SingularityApp.fastq-tools
 ---
 
 ```yaml
-%appinstall fastqtools
-     apt-get -y install libpcre3-dev
-     apt-get -y install zlibc
-%appfiles fastqtools
-    tools/fastq-tools   bin/
-    tools/fastq-kmers   bin/
-    tools/fastq-match   bin/
-    tools/fastq-uniq    bin/
-    tools/fastq-qual    bin/
-    tools/fastq-sample  bin/
-    tools/fastq-qualadj bin/
-    tools/fastq-sort    bin/
-    tools/fastq-qscale  bin/
-%appenv fastqtools
-    FASTQTOOLS_HOME=${APPROOT_fastqtools}
+%appinstall fastq-tools
+    apt-get -y install wget
+    apt-get -y install autoconf libtool build-essential
+    apt-get -y install libpcre3-dev
+    apt-get -y install zlibc libz-dev
+    # apt-get -y install libncurses5-dev
+    wget  https://github.com/dcjones/fastq-tools/archive/v0.8.tar.gz -O fastq-tools-0.8.tar.gz
+    tar --extract --gzip --file fastq-tools-0.8.tar.gz
+    rm fastq-tools-0.8.tar.gz
+    cd fastq-tools-0.8
+    ./autogen.sh && ./configure && make
+    cd -
+    #cp -puv fastq-tools-0.8/src/fastq-{grep,kmers,match,uniq,qual,sample,qualadj,sort,qscale} bin/
+    cp  fastq-tools-0.8/src/fastq-grep    bin/
+    cp  fastq-tools-0.8/src/fastq-kmers   bin/
+    cp  fastq-tools-0.8/src/fastq-match   bin/
+    cp  fastq-tools-0.8/src/fastq-uniq    bin/
+    cp  fastq-tools-0.8/src/fastq-qual    bin/
+    cp  fastq-tools-0.8/src/fastq-sample  bin/
+    cp  fastq-tools-0.8/src/fastq-qualadj bin/
+    cp  fastq-tools-0.8/src/fastq-qscale  bin/
+    #rm -rf fastq-tools-0.8
+%appfiles fastq-tools
+    fastq-tools bin/
+%appenv fastq-tools
+    FASTQTOOLS_HOME=/scif/apps/fastq-tools
     export FASTQTOOLS_HOME
-%apphelp fastqtools
-    fastqtools provide a number of small and efficient programs to perform common tasks
+%apphelp fastq-tools
+    fastq-tools provide a number of small and efficient programs to perform common tasks
     with high throughput sequencing data in the FASTQ format.
     All of the programs work with typical FASTQ files as well as gzipped FASTQ files.
-%apprun fastqtools
-    fastqtools "$@"
+%apprun fastq-tools
+    fastq-tools "$@"
 ```
