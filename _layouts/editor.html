@@ -140,13 +140,17 @@ $(function() {
 
     // Clear Editor
     $('#btn-clear').click(function(){
-        $('.ql-editor').html("")
+        $('.ql-editor').html("");
+    })
+
+    $('#btn-download').click(function(){
+        $('#download').click();
     })
 
     $('#btn-empty').click(function(){
-        $('.ql-editor').html("")
+        $('.ql-editor').html("");
         localStorage.setItem("scif-recipes", JSON.stringify({}))
-        showMessage("Your recipe box has been cleared.");
+        showMessage("Your recipe box has been emptied.");
     })
 
     editor = new Quill('#textarea', options);
