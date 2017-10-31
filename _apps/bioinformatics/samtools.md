@@ -1,7 +1,7 @@
 ---
 title:  "fastq-tools"
-date: 2017-10-30 12:00:00
-author: Alain DOmissy
+date: 2017-10-31 00:00:00
+author: Alain Domissy
 tags: 
 - ubuntu
 - debian
@@ -12,6 +12,7 @@ tags:
 - singularity
 files:
  - SingularityApp.samtools
+ 
 ---
 
 ```yaml

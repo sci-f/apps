@@ -29,3 +29,9 @@
     All of the programs work with typical FASTQ files as well as gzipped FASTQ files.
 %apprun fastq-tools
     fastq-tools "$@"
+%applabels samtools
+  MAINTAINER adomissy@ucsd.edu
+  VERSION 0.0.1
+  BUILD_DATE $(date -Ihours)
+  WRAPPEDTOOL_VERSION: 0.8
+  WRAPPEDTOOL_INFO: "http://www.htslib.org/"

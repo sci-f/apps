@@ -1,11 +1,12 @@
 ---
 title:  "fastq-tools"
-date: 2017-10-30 12:00:00
+date: 2017-10-31 00:00:00
 author: Alain Domissy
 tags: 
 - ubuntu
 - debian
 - bioinformatics
+- fastq-tools
 - fastq
 - scif
 - singularity
@@ -49,4 +50,10 @@ files:
     All of the programs work with typical FASTQ files as well as gzipped FASTQ files.
 %apprun fastq-tools
     fastq-tools "$@"
+%applabels samtools
+  MAINTAINER adomissy@ucsd.edu
+  VERSION 0.0.1
+  BUILD_DATE $(date -Ihours)
+  WRAPPEDTOOL_VERSION: 0.8
+  WRAPPEDTOOL_INFO: "https://homes.cs.washington.edu/~dcjones/fastq-tools/"
 ```
