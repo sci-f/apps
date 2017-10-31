@@ -20,7 +20,7 @@
     rm -rf fastq-tools-0.8
 %appfiles bioinformatics-fastqtools
     fastqtools bin/
-%appenv fastq-tools
+%appenv bioinformatics-fastqtools
     FASTQTOOLS_HOME=/scif/apps/bioinformatics-fastqtools
     export FASTQTOOLS_HOME
 %apphelp bioinformatics-fastqtools
