@@ -10,16 +10,17 @@ tags:
 - scif
 - singularity
 files:
- -  fastq-tools
-    fastq-kmers
-    fastq-match
-    fastq-uniq
-    fastq-qual
-    fastq-sample
-    fastq-qualadj
-    fastq-sort
-    fastq-qscale
+ - fastq-tools
+ - fastq-kmers
+ - fastq-match
+ - fastq-uniq
+ - fastq-qual
+ - fastq-sample
+ - fastq-qualadj
+ - fastq-sort
+ - fastq-qscale
  - SingularityApp.fastq-tools
+ 
 ---
 
 ```yaml
