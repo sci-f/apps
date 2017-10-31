@@ -42,9 +42,8 @@ files:
 %apprun bioinformatics-samtools
     samtools "$@"
 %applabels bioinformatics-samtools
-  MAINTAINER adomissy@ucsd.edu
-  VERSION 0.0.1
-  BUILD_DATE $(date -Ihours)
-  WRAPPEDTOOL_VERSION: 1.3.0
-  WRAPPEDTOOL_INFO: "http://www.htslib.org/"
+    MAINTAINER adomissy@ucsd.edu
+    VERSION 0.0.1
+    WRAPPEDTOOL_VERSION: 1.3.0
+    WRAPPEDTOOL_INFO: "http://www.htslib.org/"
 ```

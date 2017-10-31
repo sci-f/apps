@@ -13,7 +13,7 @@ layout: base
             <div class="spacing"></div>
             
             <div id="recipe">
-            {{ content }}
+            {{ content | safe }}
             </div>
 
         </div>
@@ -144,6 +144,7 @@ $("#removeapp").click(function(){
        toast_message('This recipe is not in your box!','info');
     }
 })
+
 
 // Copy recipe to clipboard
 $('.copyme').click(function(){
