@@ -1,7 +1,7 @@
 ---
 title:  "fastq-tools"
 date: 2017-10-30 12:00:00
-author: Alain DOmissy
+author: Alain Domissy
 tags: 
 - ubuntu
 - debian
@@ -11,14 +11,6 @@ tags:
 - singularity
 files:
  - fastq-tools
- - fastq-kmers
- - fastq-match
- - fastq-uniq
- - fastq-qual
- - fastq-sample
- - fastq-qualadj
- - fastq-sort
- - fastq-qscale
  - SingularityApp.fastq-tools
  
 ---
