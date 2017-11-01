@@ -7,13 +7,26 @@ then
 
 else
 
-    echo fastqtools v0.8
-    echo ===============
-    echo the following commands are available:
-    ls -1 ${FASTQTOOLS_HOME}/bin
     echo
-    echo "Usage:"
-    echo "singularity run --app bioinformatics-fastqtools ${SINGULARITY_CONTAINER} <command>"
+    echo Program: fastqtools v0.8 (Tools for high throughput sequencing data in the FASTQ format)
+    echo Version: 0.8
+    echo
+    echo Usage: singularity run --app bioinformatics-fastqtools ${SINGULARITY_CONTAINER} <command>
+    echo
+    echo OR
+    echo        provided the fastqtools alias is defined as below:
+    echo        alias fastqtools="singularity run --app bioinformatics-fastqtools ${SINGULARITY_CONTAINER}"
+    echo
+    echo Usage: fastqtools <command>
+    echo
+    echo Commands:
+    echo     kmers
+    echo     match
+    echo     uniq
+    echo     qual
+    echo     sample
+    echo     qualaj
+    echo     qscale
     echo
 
 fi
