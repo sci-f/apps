@@ -3,30 +3,33 @@
 if [[ -n ${1} ]]
 then
 
-    exec ${@}
-
+    if [[ -n ${2} ]]
+    then
+        exec ${@}
+    else
+        exec ${1} --help
+    fi
 else
 
     echo
-    echo Program: fastqtools v0.8 (Tools for high throughput sequencing data in the FASTQ format)
-    echo Version: 0.8
+    echo "Program: fastqtools v0.8 (Tools for high throughput sequencing data in the FASTQ format)"
+    echo "Version: 0.8"
     echo
-    echo Usage: singularity run --app bioinformatics-fastqtools ${SINGULARITY_CONTAINER} <command>
+    echo "Usage: singularity run --app bioinformatics-fastqtools ${SINGULARITY_CONTAINER} <command>"
     echo
-    echo OR
-    echo        provided the fastqtools alias is defined as below:
-    echo        alias fastqtools="singularity run --app bioinformatics-fastqtools ${SINGULARITY_CONTAINER}"
+    echo "OR,   provided this alias is defined:"
+    echo "      alias fastqtools='singularity run --app bioinformatics-fastqtools ${SINGULARITY_CONTAINER}'"
     echo
-    echo Usage: fastqtools <command>
+    echo "Usage: fastqtools <command>"
     echo
-    echo Commands:
-    echo     kmers
-    echo     match
-    echo     uniq
-    echo     qual
-    echo     sample
-    echo     qualaj
-    echo     qscale
+    echo "Commands:"
+    echo "    kmers"
+    echo "    match"
+    echo "    uniq"
+    echo "    qual"
+    echo "    sample"
+    echo "    qualadj"
+    echo "    qscale"
     echo
 
 fi
