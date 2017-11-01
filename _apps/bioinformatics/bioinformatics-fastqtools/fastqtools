@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
 
-echo fastqtools v0.8
-echo ===============
-echo the following commands are available:
-ls -1 ${FASTQTOOLS_HOME}/bin
-echo
+if [[ -n ${1} ]]
+then
 
-echo "Usage:"
-echo "singularity exec --app bioinformatics-fastqtools <container> <command>"
-echo
+    exec ${@}
+
+else
+
+    echo fastqtools v0.8
+    echo ===============
+    echo the following commands are available:
+    ls -1 ${FASTQTOOLS_HOME}/bin
+    echo
+    echo "Usage:"
+    echo "singularity run --app bioinformatics-fastqtools ${SINGULARITY_CONTAINER} <command>"
+    echo
+
+fi
