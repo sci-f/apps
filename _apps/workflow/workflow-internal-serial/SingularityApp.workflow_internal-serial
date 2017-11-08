@@ -1,4 +1,4 @@
-%applabels bioinformatics-samtools
+%applabels workflow-internal-serial
     MAINTAINER bneron@pasteur.fr
 
 %apphelp workflow-internal-serial
