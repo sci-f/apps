@@ -2,7 +2,6 @@
 title:  "App Name"
 date:   YYYY-MM-DD HH:MM:SS
 author: Vanessa Sochat
-image: app/robots/robot1.png
 tags: 
 - scif
 - singularity
