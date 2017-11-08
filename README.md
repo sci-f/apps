@@ -46,7 +46,6 @@ Next, you should edit the file that you just copied with your app. Let's take a 
       title:  "App Name"
       date:   YYYY-MM-DD HH:MM:SS
       author: Vanessa Sochat
-      image: app/robots/robot1.png
       tags: 
       - scif
       - singularity
@@ -73,7 +72,6 @@ Now let's look at the metadata in the header:
  - **title** is a human readable title. Make sure it remains in quotes
  - **date** should correspond to the date that you created or are adding the app.
  - **author** is your alias
- - **image** can be one of the robot images, with the base assumed at `assets/img` in the repository. If you want to use an existing robot, check out the files under `assets/img/app/robots`. If you want to add a custom image, add it to `assets/img/app/custom` (and create if it doesn't exist yet). If you want an even greated selection of robots, download one from [vsoch.github.io/robots](vsoch.github.io/robots) and add it to the repo.
  - **tags** are important - they help to make your app searchable. This should be a yaml list of single terms
  - **files** are not required, but if you have them, you should create a folder named equivalently to your app (eg, `workflow-internal-serial` in the same folder as the markdown file, and add the files here. They will be provided if someone downloads your app. 
 
