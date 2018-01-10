@@ -13,7 +13,7 @@ tags:
 
 %apphelp docs-scif-help
 
-A Standard Container Integration Format (SCI-F)
+A Scientific Filesystem (SCI-F)
 apps container makes it easy to run various 
 metrics over an analysis of interest  (the 
 container's main runscript). Each installed 

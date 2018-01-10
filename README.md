@@ -1,4 +1,4 @@
-# Standard Container Integration Format (SCI-F) Apps
+# Scientific Filesystem (SCI-F) Apps
 
 Hi there! This is the base for SCI-F apps. We just finished developing the nuts
 and bolts, and will have instructions for contributing soon.

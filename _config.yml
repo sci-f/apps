@@ -1,8 +1,8 @@
 ### GENERAL SETTINGS ###
 
 # Site settings
-title: CONTAINERS-FTW
-description: "Standard Container Integration Format (SCI-F) Singularity Containers"
+title: "SCIENTIFIC FILESYSTEM"
+description: "Scientific Filesystem (SCI-F) Apps"
 baseurl: "/apps" #important: start with /
 url: ""
 

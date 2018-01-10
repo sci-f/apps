@@ -10,7 +10,7 @@ categories:
 ---
 
 
-In this tutorial, we are going to get started with Standard Container Integration Format (SCI-F) apps. Specifically, we will build a container that prints colored fortunes. If you want to grab the recipe to follow along, you can <a href="https://github.com/singularityware/singularity/blob/development/examples/apps/Singularity.cowsay" target='_blank'>get it here</a>. If you don't want to read and prefer to watch, check out the Video below. Otherwise, keep reading.
+In this tutorial, we are going to get started with the Scientific Filesystem (SCI-F) apps. Specifically, we will build a container that prints colored fortunes. If you want to grab the recipe to follow along, you can <a href="https://github.com/singularityware/singularity/blob/development/examples/apps/Singularity.cowsay" target='_blank'>get it here</a>. If you don't want to read and prefer to watch, check out the Video below. Otherwise, keep reading.
 
 {% include asciicast-custom.html title="Cowsay Getting Started" name="cowsay-getting-started.json" rows=46 cols=79 speed=3 %}  
 
