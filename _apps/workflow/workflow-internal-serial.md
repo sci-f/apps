@@ -3,7 +3,7 @@ title:  "workflow-internal-serial"
 date:   2017-11-08 00:00:00
 author: Bertrand Neron
 files:
-- SingularityApp.workflow-internal-serial
+- workflow-internal-serial.scif
 tags: 
 - scif
 - singularity
