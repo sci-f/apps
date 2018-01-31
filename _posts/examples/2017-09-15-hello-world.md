@@ -10,7 +10,7 @@ categories:
  - Applications
 ---
 
-A common question pertains to evaluation of different solutions toward a common goal. An individual might ask “How does implementation “A” compare to implementation “B” as evaluated by one or more metrics?” For a systems admin, the metric might pertain to running times, resource usage, or efficiency. For a researcher, he or she might be interested in looking at variability (or consistency) of outputs. Importantly, it should be possible to give a container serving such a purpose to a third party that does not know locations of executables, or environment variables to load, and the container runs equivalently. SCI-F allows for this by way of providing modular software applications, each corresponding to a custom environment, libraries, and potentially files.
+A common question pertains to evaluation of different solutions toward a common goal. An individual might ask "How does implementation "A" compare to implementation "B" as evaluated by one or more metrics?” For a systems admin, the metric might pertain to running times, resource usage, or efficiency. For a researcher, he or she might be interested in looking at variability (or consistency) of outputs. Importantly, it should be possible to give a container serving such a purpose to a third party that does not know locations of executables, or environment variables to load, and the container runs equivalently. SCI-F allows for this by way of providing modular software applications, each corresponding to a custom environment, libraries, and potentially files.
 
 <!--more--> 
 

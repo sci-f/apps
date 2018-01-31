@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "An Introduction to SCI-F Apps"
-date:   2017-09-21 21:16:01 -0600
+date:   2018-01-30 21:16:01 -0600
 author: Vanessasaurus
-github: https://github.com/singularityware/singularity/blob/development/examples/apps/Singularity.cowsay
+github: https://github.com/sci-f/sci-f.github.io/blob/master/_posts/tutorials
 categories:
  - Examples
  - Tutorials
