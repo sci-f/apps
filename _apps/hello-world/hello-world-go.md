@@ -10,7 +10,7 @@ tags:
 - go
 files:
  - hello-world.go
- - SingularityApp.go
+ - go.scif
 ---
 
 ```yaml

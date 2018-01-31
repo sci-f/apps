@@ -10,7 +10,7 @@ tags:
 - singularity
 files:
  - hello-world.cat
- - SingularityApp.cat
+ - cat.scif
 ---
 
 ```yaml

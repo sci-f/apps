@@ -10,12 +10,12 @@ tags:
 - clisp
 files:
  - hello-world.clisp
- - SingularityApp.clisp
+ - clisp.scif
 ---
 
 ```yaml
 %apprun hello-world-clisp
-    exec clisp $SINGULARITY_APPROOT/hello-world.clisp
+    exec clisp $SCIF_APPROOT/hello-world.clisp
 %appfiles hello-world-clisp
     hello-world.clisp
 %appinstall hello-world-clisp
