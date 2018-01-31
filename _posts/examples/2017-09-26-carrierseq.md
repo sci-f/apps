@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "CarrierSeq: sequence analysis workflow with SCI-F"
+title:  "CarrierSeq: sequence analysis workflow with Singularity + SCIF"
 author: Vanessasaurus
 date:   2017-09-26 11:12:01 -0600
 github: https://github.com/vsoch/carrierseq/tree/singularity

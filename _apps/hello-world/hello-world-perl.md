@@ -10,12 +10,12 @@ tags:
 - perl
 files:
  - hello-world.pl
- - SingularityApp.pl
+ - pl.scif
 ---
 
 ```yaml
 %apprun hello-world-perl
-    exec perl6 $SINGULARITY_APPROOT/hello-world.pl
+    exec perl6 $SCIF_APPROOT/hello-world.pl
 %appfiles hello-world-perl
     hello-world.perl
 %appinstall hello-world-perl

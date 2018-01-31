@@ -12,7 +12,7 @@ tags:
 - singularity
 files:
  - fastqtools
- - SingularityApp.fastqtools
+ - fastqtools.scif
  
 ---
 

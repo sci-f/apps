@@ -25975,7 +25975,7 @@
     ],
     [
       0.093678,
-      "SINGULARITY_APPOUTPUT=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/output\r\nBEST_APP=\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nLD_LIBRARY_PATH=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/lib::/.singularity.d/libs\r\nSINGULARITY_APPDATA=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nPATH=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/bin:/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K:/usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\r\nSINGULARITY_APPINPUT=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/input\r\nSINGULARITY_APPROOT=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nSINGULARITY_APPNAME=\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nSINGULARITY_APPMETA=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/scif\r\nAPPDATA_\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nAPPROOT_\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\n"
+      "SCIF_APPOUTPUT=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/output\r\nBEST_APP=\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nLD_LIBRARY_PATH=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/lib::/.singularity.d/libs\r\nSCIF_APPDATA=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nPATH=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/bin:/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K:/usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\r\nSCIF_APPINPUT=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/input\r\nSCIF_APPROOT=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nSCIF_APPNAME=\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nSCIF_APPMETA=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/scif\r\nAPPDATA_\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nAPPROOT_\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\n"
     ],
     [
       0.048848,
@@ -27347,7 +27347,7 @@
     ],
     [
       0.084412,
-      "SINGULARITY_APPOUTPUT=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/output\r\nBEST_APP=\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nLD_LIBRARY_PATH=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/lib::/.singularity.d/libs\r\nSINGULARITY_APPDATA=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nPATH=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/bin:/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K:/usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\r\nSINGULARITY_APPINPUT=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/input\r\nSINGULARITY_APPROOT=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nSINGULARITY_APPNAME=\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nSINGULARITY_APPMETA=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/scif\r\nAPPDATA_\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nAPPROOT_\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\n"
+      "SCIF_APPOUTPUT=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/output\r\nBEST_APP=\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nLD_LIBRARY_PATH=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/lib::/.singularity.d/libs\r\nSCIF_APPDATA=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nPATH=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/bin:/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K:/usr/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\r\nSCIF_APPINPUT=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/input\r\nSCIF_APPROOT=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nSCIF_APPNAME=\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nSCIF_APPMETA=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K/scif\r\nAPPDATA_\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K=/scif/data/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\nAPPROOT_\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K=/scif/apps/\u001b[01;31m\u001b[Kfortune\u001b[m\u001b[K\r\n"
     ],
     [
       0.057673,
@@ -30295,7 +30295,7 @@
     ],
     [
       0.114244,
-      "{\r\n    \"BESTFRUIT\": \"vegetable\",\r\n    \"MAINTAINER\": \"vanessasaur\",\r\n    \"SINGULARITY_APP_NAME\": \"lolcat\",\r\n    \"LOL\": \"cat\",\r\n    \"SINGULARITY_APP_SIZE\": \"1MB\"\r\n}\r\n"
+      "{\r\n    \"BESTFRUIT\": \"vegetable\",\r\n    \"MAINTAINER\": \"vanessasaur\",\r\n    \"SCIF_APP_NAME\": \"lolcat\",\r\n    \"LOL\": \"cat\",\r\n    \"SCIF_APP_SIZE\": \"1MB\"\r\n}\r\n"
     ],
     [
       0.049945,

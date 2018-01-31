@@ -11,12 +11,12 @@ tags:
 - singularity
 files:
  - hello-world.tcsh
- - SingularityApp.tcsh
+ - tcsh.scif
 ---
 
 ```yaml
 %apprun hello-world-tcsh
-    exec tcsh $SINGULARITY_APPROOT/hello-world.tcsh
+    exec tcsh $SCIF_APPROOT/hello-world.tcsh
 %appfiles hello-world-tcsh
     hello-world.tcsh
 %appinstall hello-world-tcsh

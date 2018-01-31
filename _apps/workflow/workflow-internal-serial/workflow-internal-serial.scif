@@ -12,7 +12,7 @@
         echo -e "\n##################################"
         echo "  Entering in step: ${step}"
         echo -e "##################################\n"
-        export SINGULARITY_APPNAME=${step}
+        export SCIF_APPNAME=${step}
         /bin/bash /.singularity.d/actions/run
         status=$?
         if [ $status -ne 0]; then

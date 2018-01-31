@@ -20,18 +20,18 @@ to the app's environment.
 
     singularity run --app slurm <container>
 
-# add your email
+    # add your email
     singularity run --app slurm <container> vsochat@stanford.edu
 
-# save to file:
+    # save to file:
     singularity run --app slurm <container> >> <job-file>.job
     
-# and then submit
+    # and then submit
     sbatch <job-file>.job
 
 %appenv hpc-slurm-submit
-DEBIAN_FRONTEND=noninteractive
-export DEBIAN_FRONTEND
+    DEBIAN_FRONTEND=noninteractive
+   export DEBIAN_FRONTEND
 
 %appinstall hpc-slurm-submit
     apt-get update && apt-get install -y time
@@ -45,14 +45,14 @@ export DEBIAN_FRONTEND
     # a new %appenv hpc-slurm-submit section
     ###
   
-    SINGULARITY_APPNAME= /usr/bin/time -o times.txt /.singularity.d/actions/run
+    SCIF_APPNAME= /usr/bin/time -o times.txt /.singularity.d/actions/run
 
     IFS=''
     while read line
     do
-    echo $line >> $SINGULARITY_ENVIRONMENT
+    echo $line >> $SCIF_ENVIRONMENT
     done < times.txt
-    echo "export TIME_HMS MEMORY_KB" >> $SINGULARITY_ENVIRONMENT
+    echo "export TIME_HMS MEMORY_KB" >> $SCIF_ENVIRONMENT
 
 
 %apprun hpc-slurm-submit
@@ -72,7 +72,7 @@ fi
 echo "#SBATCH --mail-type=ALL"
 echo "#SBATCH --time=$TIME_HMS"
 echo "module load singularity"
-echo "singularity run $PWD/$SINGULARITY_CONTAINER"
+echo "singularity run $CONTAINER"
 echo "# example: run the job script command line:"
 echo "# sbatch pokemon.job"
 ```

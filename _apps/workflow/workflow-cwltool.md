@@ -11,7 +11,7 @@ tags:
 - scif
 - singularity
 files:
- - SingularityApp.cwltool
+ - cwltool.scif
  
 ---
 

@@ -10,12 +10,12 @@ tags:
 - singularity
 files:
  - hello-world.cat
- - SingularityApp.cat
+ - cat.scif
 ---
 
 ```yaml
 %apprun hello-world-cat
-    exec cat $SINGULARITY_APPROOT/hello-world.cat
+    exec cat $SCIF_APPROOT/hello-world.cat
 %appfiles hello-world-cat
     hello-world.cat
 ```

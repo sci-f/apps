@@ -1,0 +1,13 @@
+%appenv foo
+    BEST_GUY=foo
+    export BEST_GUY
+
+%appenv bar
+    BEST_GUY=bar
+    export BEST_GUY
+
+%apprun foo
+    echo The best guy is $BEST_GUY
+
+%apprun bar
+    echo The best guy is $BEST_GUY

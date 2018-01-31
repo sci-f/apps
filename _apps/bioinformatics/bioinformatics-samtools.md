@@ -11,7 +11,7 @@ tags:
 - scif
 - singularity
 files:
- - SingularityApp.samtools
+ - samtools.scif
  
 ---
 

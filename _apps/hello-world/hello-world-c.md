@@ -10,7 +10,7 @@ tags:
 - singularity
 files:
  - hello-world.c
- - SingularityApp.c
+ - c.scif
 ---
 
 ```yaml

@@ -10,12 +10,12 @@ tags:
 - ruby
 files:
  - hello-world.rb
- - SingularityApp.rb
+ - rb.scif
 ---
 
 ```ruby
 %apprun hello-world-ruby
-    exec ruby $SINGULARITY_APPROOT/hello-world.rb
+    exec ruby $SCIF_APPROOT/hello-world.rb
 %appfiles hello-world-ruby
     hello-world.rb
 %appinstall hello-world-ruby
