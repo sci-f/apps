@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "An Introduction to SCI-F Apps"
-date:   2018-01-30 21:16:01 -0600
+date:   2018-01-29 09:15:01 -0600
 author: Vanessasaurus
 github: https://github.com/sci-f/sci-f.github.io/blob/master/_posts/tutorials
 categories:

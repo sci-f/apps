@@ -2,7 +2,7 @@
 layout: post
 title:  "CarrierSeq: sequence analysis workflow with SCIF"
 author: Vanessasaurus
-date:   2018-01-31 11:12:01 -0600
+date:   2018-01-29 11:12:01 -0600
 github: https://github.com/vsoch/carrierseq/tree/master
 categories:
  - Examples
