@@ -10,7 +10,7 @@ tags:
 - singularity
 files:
  - hello-world.rs
- - SingularityApp.rs
+ - rs.scif
 ---
 
 ```yaml

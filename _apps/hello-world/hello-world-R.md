@@ -10,12 +10,12 @@ tags:
 - singularity
 files:
  - hello-world.R
- - SingularityApp.R
+ - R.scif
 ---
 
 ```yaml
 %apprun hello-world-R
-    exec Rscript $SINGULARITY_APPROOT/hello-world.R
+    exec Rscript $SCIF_APPROOT/hello-world.R
 %appfiles hello-world-R
     hello-world.R
 %appinstall hello-world-R

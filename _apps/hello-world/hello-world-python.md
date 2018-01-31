@@ -10,12 +10,12 @@ tags:
 - singularity
 files:
  - hello-world.py
- - SingularityApp.py
+ - py.scif
 ---
 
 ```yaml
 %apprun hello-world-python
-    exec python $SINGULARITY_APPROOT/hello-world.py
+    exec python $SCIF_APPROOT/hello-world.py
 %appfiles hello-world-python
     hello-world.py
 %appinstall hello-world-python

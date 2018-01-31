@@ -13,16 +13,16 @@ tags:
 
 %apphelp docs-readme
 
-This module will add a README from a repo to a 
+This module will add a README from a repository to a 
 container, and then print it out fully for the user
 when the app is run:
 
-    singularity run --app docs-readme <container>
+    ./<container> run docs-readme
 
 
 %apprun docs-readme
-cat ${SINGULARITY_APPROOT}/README.md
+    cat ${SCIF_APPROOT}/README.md
 
 %appfiles docs-readme
-README*
+    README*
 ```

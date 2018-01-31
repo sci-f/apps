@@ -14,7 +14,7 @@ tags:
 %appinstall metrics-bash-parallel
     apt-get install -y parallel
 %apprun metrics-bash-parallel
-    unset SINGULARITY_APPNAME
+    unset SCIF_APPNAME
     COMMAND="/.singularity.d/actions/run"
     parallel /bin/bash ::: $COMMAND $COMMAND $COMMAND
 ```

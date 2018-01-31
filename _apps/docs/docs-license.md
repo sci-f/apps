@@ -17,12 +17,15 @@ This module will add a LICENSE from a repo to a
 container, and then print it out fully for the user
 when the app is run:
 
-    singularity run --app docs-license <container>
+    scif run docs-license
 
+    or in a container
+ 
+    ./<container> run docs-license
 
 %apprun docs-license
-cat ${SINGULARITY_APPROOT}/LICENSE
+    cat ${SCIF_APPROOT}/LICENSE
 
 %appfiles docs-license
-LICENSE*
+    LICENSE*
 ```

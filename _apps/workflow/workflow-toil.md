@@ -12,7 +12,7 @@ tags:
 - scif
 - singularity
 files:
- - SingularityApp.toil
+ - toil.scif
  
 ---
 

@@ -14,6 +14,6 @@ tags:
 %appinstall metrics-bash-strace
     apt-get install -y strace
 %apprun metrics-bash-strace
-    unset SINGULARITY_APPNAME
+    unset SCIF_APPNAME
     exec strace -c -t /.singularity.d/actions/run
 ```

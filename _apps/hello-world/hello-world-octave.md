@@ -10,12 +10,12 @@ tags:
 - singularity
 files:
  - hello-world.octave
- - SingularityApp.octave
+ - octave.scif
 ---
 
 ```yaml
 %apprun hello-world-octave
-    exec octave --no-gui --silent $SINGULARITY_APPROOT/hello-world.octave
+    exec octave --no-gui --silent $SCIF_APPROOT/hello-world.octave
 %appenv hello-world-octave
     DISPLAY=localhost:0.0
     export DISPLAY

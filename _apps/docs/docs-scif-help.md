@@ -13,21 +13,20 @@ tags:
 
 %apphelp docs-scif-help
 
-A Scientific Filesystem (SCI-F)
-apps container makes it easy to run various 
-metrics over an analysis of interest  (the 
-container's main runscript). Each installed 
-app can be thought of as a particular context 
-to evoke the container's main runscript.
+A Scientific Filesystem (SCI-F) makes it easy to expose multiple
+    entry points, environments, and help for scientific applications,
+    whether installed in a container or on the host. A runscript entry
+    point can be everything from an interactive environment to a script
+    to execute.
 
-# List all apps
-singularity apps <container>
+    # List all applications
+    ./<container> apps
 
-# Run a specific app
-singularity run --app <app> <container>
+    # Run a specific application
+    ./<container> run <app>
 
-# Loop over all apps
-for app in $(singularity apps <container>); do
-    singularity run --app $app <container>
-done
+    # Loop over all applications
+    for app in $(./<container> apps); do
+        ./<container> run $app
+    done
 ```

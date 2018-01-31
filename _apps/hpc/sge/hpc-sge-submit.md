@@ -20,22 +20,22 @@ to the app's environment.
 
     singularity run --app hpc-sge-submit <container>
 
-# add your email
+    # add your email
     singularity run --app hpc-sge-submit <container> vsochat@stanford.edu
 
-# save to file:
+    # save to file:
     singularity run --app hpc-sge-submit <container> >> <job-file>.job
     
-# add other arguments
+    # add other arguments
     singularity run --app hpc-sge-submit <container> -q normal
 
-# Run
+    # Run
     qsub <job-file>.job
 
 
 %appenv hpc-sge-submit
-DEBIAN_FRONTEND=noninteractive
-export DEBIAN_FRONTEND
+    DEBIAN_FRONTEND=noninteractive
+    export DEBIAN_FRONTEND
 
 
 %appinstall hpc-sge-submit
@@ -50,14 +50,14 @@ export DEBIAN_FRONTEND
     # a new %appenv hpc-slurm-submit section
     ###
   
-    SINGULARITY_APPNAME= /usr/bin/time -o times.txt /.singularity.d/actions/run
+    SCIF_APPNAME= /usr/bin/time -o times.txt /.singularity.d/actions/run
 
     IFS=''
     while read line
     do
-    echo $line >> $SINGULARITY_ENVIRONMENT
+    echo $line >> $SCIF_ENVIRONMENT
     done < times.txt
-    echo "export TIME_HMS MEMORY_KB" >> $SINGULARITY_ENVIRONMENT
+    echo "export TIME_HMS MEMORY_KB" >> $SCIF_ENVIRONMENT
 
 
 %apprun hpc-sge-submit
@@ -65,7 +65,7 @@ MEMORY_MB=$(echo "$(( ${MEMORY_KB%% *} / 1024))")
 echo "#!/bin/bash"
 echo "# run_job.sh"
 echo "module load singularity"
-echo "singularity run $PWD/$SINGULARITY_CONTAINER"
+echo "singularity run $CONTAINER"
 echo "# submission command"
 QUEUE="-q normal"
 if [ $# -ne 0 ]

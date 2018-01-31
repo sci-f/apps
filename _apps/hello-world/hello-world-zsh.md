@@ -11,12 +11,12 @@ tags:
 - singularity
 files:
  - hello-world.zsh
- - SingularityApp.zsh
+ - zsh.scif
 ---
 
 ```yaml
 %apprun hello-world-zsh
-    exec /bin/zsh $SINGULARITY_APPROOT/hello-world.zsh
+    exec /bin/zsh $SCIF_APPROOT/hello-world.zsh
 %appfiles hello-world-zsh
     hello-world.zsh
 %appinstall hello-world-zsh
