@@ -3,7 +3,7 @@
 # fortune
 # =======================
 %appinstall fortune
-    apt-get -y install fortune
+    apt-get update && apt-get install -y fortune
 
 %appenv fortune
     BEST_APP=fortune
@@ -19,7 +19,7 @@
 # cowsay
 # =======================
 %appinstall cowsay
-    apt-get -y install cowsay
+    apt-get update && apt-get install -y cowsay
 
 %appenv cowsay
     BEST_APP=cowsay
@@ -35,7 +35,7 @@
 # lolcat
 # =======================
 %appinstall lolcat
-    apt-get -y install lolcat
+    apt-get update && apt-get install -y lolcat
 
 %appenv lolcat
     BEST_APP=lolcat
