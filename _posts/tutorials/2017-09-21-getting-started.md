@@ -232,7 +232,7 @@ The best guy is foo
 
 
 ### Container Modularity
-The next goal is container modularity! For this example, we are going to switch to a more fun build recipe - cowsay!  If you want to grab the recipe to follow along, you can <a href='https://github.com/sci-f/sci-f.github.io/blob/master/_posts/tutorials/cowsay.scif' target='_blank'>get it here. Let's again build a Docker and Singularity container.
+The next goal is container modularity! For this example, we are going to switch to a more fun build recipe - cowsay!  If you want to grab the recipe to follow along, you can <a href='https://github.com/sci-f/apps/blob/master/_posts/tutorials/cowsay.scif' target='_blank'>get it here. Let's again build a Docker and Singularity container.
 
 ```
 FROM vanessa/scif
