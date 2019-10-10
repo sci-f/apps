@@ -16,6 +16,13 @@
     exec /usr/games/fortune "$@"
 
 # =======================
+# unicorn
+# =======================
+
+%apprun unicorn
+    exec /usr/games/fortune | /usr/games/lolcat
+
+# =======================
 # cowsay
 # =======================
 %appinstall cowsay
@@ -45,4 +52,4 @@
     lolcat is the best app
 
 %apprun lolcat
-    exec /usr/games/lolcat "$@"
+    echo "$@" | /usr/games/lolcat
