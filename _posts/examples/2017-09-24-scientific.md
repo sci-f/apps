@@ -3,7 +3,7 @@ layout: post
 title:  "Singularity Scientific Workflow with SCI-F Example"
 author: Vanessasaurus
 date:   2017-09-24 21:12:01 -0600
-github: https://github.com/containers-ftw/scientific-example-ftw
+github: https://github.com/sci-f/scientific-example.scif
 categories:
  - Examples
 ---
@@ -14,8 +14,8 @@ Here we are going to do a comparison between a scientific analysis provided in s
 <br>
 
 <ul>
-   <li><a href="https://github.com/containers-ftw/scientific-example-ftw/blob/master/Singularity" target="_blank">Singularity (without SCI-F)</a></li>
-   <li><a href="https://github.com/containers-ftw/scientific-example-ftw/blob/master/Singularity.noscif" target="_blank">Singularity (with SCI-F)</a></li>
+   <li><a href="https://github.com/sci-f/scientific-example.scif/blob/master/Singularity" target="_blank">Singularity (without SCI-F)</a></li>
+   <li><a href="https://github.com/sci-f/scientific-example.scif/blob/master/Singularity.noscif" target="_blank">Singularity (with SCI-F)</a></li>
 </ul>
 
 <br>
