@@ -18,8 +18,8 @@ exclude_from_search: true
                 "id": "{{ app.url | replace:'.html','.md' | replace: '/scif/', '' }}",
                 "author": "{{ app.author }}",
                 {% if app.tags %}"tags": [{% for tag in app.tags %}"{{ tag }}"{% if forloop.last %}{% else %},{% endif %}{% endfor %}],{% endif %}
-                {% if app.files %}"files": [{% for file in app.files %}"{{ site.url }}/apps{{ app.url }}{{ file }}"{% if forloop.last %}{% else %},{% endif %}{% endfor %}],{% endif %}
-                "links": {"self": "{{ app.url }}?json=1"}
+                {% if app.files %}"files": [{% for file in app.files %}"{{ site.url }}{{ app.url }}{{ file }}"{% if forloop.last %}{% else %},{% endif %}{% endfor %}],{% endif %}
+                "links": {"self": "{{ site.url }}{{ app.url }}?json=1"}
             }{% if forloop.last %}{% else %},{% endif %}
 {% endfor %}
 ]
