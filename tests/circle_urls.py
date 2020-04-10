@@ -20,6 +20,6 @@ for html_file in files:
         content = filey.read()
     for search_name in search_names:
         content = content.replace('%s"' %(search_name),'%s.html"' %(search_name))
-    content = content.replace('/images/logo/logo.png','https://containers-ftw.github.io/apps/assets/img/logo/logo.png')
+    content = content.replace('/images/logo/logo.png','https://sci-f.github.io/apps/assets/img/logo/logo.png')
     with open(html_file,'w') as filey:
         filey.write(content)

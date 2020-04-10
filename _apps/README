@@ -15,7 +15,7 @@
       singularity create --size 2000 container.img
       sudo singularity bootstrap container.img Singularity
 
-3. If you downloaded the zip from containers-ftw, you should be able to unzip
+3. If you downloaded the zip from sci-f, you should be able to unzip
    it, create the container, and run the command above.
 
    unzip SingularityRecipe.scif.zip

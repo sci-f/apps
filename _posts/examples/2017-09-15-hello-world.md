@@ -3,7 +3,7 @@ layout: post
 title:  "Hello World, Using SCI-F for Modular Software Evaluation"
 date:   2017-09-13 16:16:01 -0600
 author: Vanessasaurus
-github: https://github.com/containers-ftw/hello-world-ftw
+github: https://github.com/sci-f/container.scif
 asciinema: hello-world-scif.json
 categories:
  - Examples
@@ -85,4 +85,4 @@ done
 In practice, for general metrics like timing and host resources, it is advantageous to perform tests externally, as the containers themselves can be agnostic to the tests. For tests that look at system calls (e.g., strace as in the example above) calling externally would mean needing to properly account for the call to the singularity software itself in the results.
 
 ## Results
-To demonstrate the value of using SCI-F containers, we ran a simple function to print to the command line in 19 languages, and were able to run the analysis in entirety without knowing the specific commands for each language. The resulting table of features pertaining to times and resources (Supplementary Table 1) demonstrates a wide span of differences between the seemingly identical calls. A principle component analysis (PCA) of these features shows distinct groups (see [full results](https://github.com/containers-ftw/hello-world-ftw/blob/master/logs/languages_metrics.ipynb) here)
+To demonstrate the value of using SCI-F containers, we ran a simple function to print to the command line in 19 languages, and were able to run the analysis in entirety without knowing the specific commands for each language. The resulting table of features pertaining to times and resources (Supplementary Table 1) demonstrates a wide span of differences between the seemingly identical calls. A principle component analysis (PCA) of these features shows distinct groups (see [full results](https://github.com/sci-f/container.scif/blob/master/logs/languages_metrics.ipynb) here)
